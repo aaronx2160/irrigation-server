@@ -4,15 +4,8 @@ const bodyParser = require('body-parser')
 const jwt = require('./utils/jwt')
 const app = express()
 
-// app.use(cors())
-// app.use('/static', express.static('public'))
 app.use(bodyParser.json())
-// app.use(
-//   cookieSession({
-//     maxAge: 30 * 24 * 60 * 60 * 1000,
-//     keys: [keys.cookieKey],
-//   })
-// )
+
 let i = 0
 app.all('/*', (request, res, next) => {
   i++
@@ -44,7 +37,6 @@ app.all('/*', (request, res, next) => {
 
 require('./routes/authRoutes')(app)
 require('./routes/menuRoutes')(app)
-require('./routes/areaRoutes')(app)
 require('./routes/settingsRoutes')(app)
 require('./routes/statisticsRouts')(app)
 require('./routes/waterRights')(app)

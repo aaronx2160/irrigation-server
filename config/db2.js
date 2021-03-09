@@ -19,6 +19,7 @@ module.exports = function (sql, placeHolder, callback) {
     } else {
       conn.query(sql, placeHolder, function (query_err, result) {
         conn.release()
+        conn.destroy()
         callback(query_err, result)
       })
     }
