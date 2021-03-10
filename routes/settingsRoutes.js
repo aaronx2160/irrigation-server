@@ -8,7 +8,7 @@ module.exports = (app) => {
     const sql = "select * from basedeviceinfo where ?? =? order by ??"
     const placeHolder = [
       "WaterAreaId",
-      "174b014cad674b558d86b50e85453ec6",
+      1,
       "DeviceCode",
     ]
     conn(sql, placeHolder, (err, ress) => {
@@ -54,10 +54,10 @@ module.exports = (app) => {
     })
   })
   app.get("/api/liveDataList", async (req, res) => {
-    try {
+   
       conn(
-        "SELECT * FROM basedeviceinfo t1 INNER JOIN basedevicedynamicinfo t2 ON t1.Id = t2.DeviceId where ??=? order by ??",
-        ["WaterAreaId", "174b014cad674b558d86b50e85453ec6", "t2.DeviceCode"],
+        "SELECT * FROM basedeviceinfo t1 LEFT JOIN basedevicedynamicinfo t2 ON t1.Id = t2.DeviceId where ??=? order by ?? DESC",
+        ["WaterAreaId", 1, "t2.CollectTime"],
         (err, result) => {
           if (err) {
             res.send({
@@ -78,14 +78,6 @@ module.exports = (app) => {
           }
         }
       )
-    } catch (error) {
-      res.send({
-        meta: {
-          msg: error,
-          status: 404,
-        },
-      })
-    }
   })
   app.get("/api/waterAreas", async (req, res) => {
     conn("select * from syswaterarea2", (err, result) => {

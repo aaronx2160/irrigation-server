@@ -45,7 +45,7 @@ module.exports = (app) => {
   app.post('/api/waterUsage', (req, res) => {
     const { deviceCode, year } = req.body
     const sql =
-      'select * from (rptusewaterdetail as rpt inner join basedeviceinfo as device on rpt.DeviceCode = device.DeviceCode) inner join sysarea as area on device.AreaId = area.Id where ?? in (?) && ?? = ?'
+      'select * from (rptusewaterdetail as rpt inner join basedeviceinfo as device on rpt.DeviceCode = device.DeviceCode) inner join sysarea2 as area on device.AreaId = area.id where ?? in (?) && ?? = ?'
     const placeHolder = ['rpt.DeviceCode', deviceCode, 'rpt.InYear', year]
     conn(sql, placeHolder, (err, ress) => {
       if (err) {

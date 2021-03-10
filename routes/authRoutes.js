@@ -273,15 +273,16 @@ module.exports = (app) => {
             'select * from sysmenu where ?? in ( ? )',
             ['Id', rightsIdArr],
             (e, rightsList) => {
-              if (e) return console.log(e)
-              console.log(rightsList)
-              res.send({
-                data: rightsList,
-                meta: {
-                  msg: '获取权限列表成功',
-                  status: 200,
-                },
-              })
+              if (e) 
+              { console.log(e)}else{
+                res.send({
+                  data: rightsList,
+                  meta: {
+                    msg: '获取权限列表成功',
+                    status: 200,
+                  },
+                })
+              }
             }
           )
         }
@@ -534,5 +535,24 @@ module.exports = (app) => {
         })
       }
     })
+  })
+
+  app.post('/api/test',(req,res)=>{
+
+    const sql = 'select DeviceId from basedevicedynamicinfo where DeviceCode NOT IN (?)'
+    const placeHolder=[req.body]
+    conn(sql,placeHolder,(err,ress)=>{
+      for(let i =0;i<ress.length;i++){
+        const sqlDel ='DELETE FROM basedevicedynamicinfo where DeviceId = ?'
+      const placeHolderDel = [ress[i]['DeviceId']]
+      conn(sqlDel,placeHolderDel,(e,r)=>{
+        console.log(e)
+        console.log(r)
+      })
+        
+      }
+    })
+
+   
   })
 }
