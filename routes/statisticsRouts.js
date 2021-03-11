@@ -1,64 +1,98 @@
 const conn = require("../config/db2")
 module.exports = (app) => {
-  app.post("/api/useWaterInfo", (req, res) => {
-    const DeviceCode = req.body.DeviceCode.trim()
-    const CardCode = req.body.CardCode.trim()
+  app.get("/api/useWaterInfo", (req, res) => {
     const data = {}
-    if (DeviceCode !== "" || CardCode !== "") {
-      conn(
-        "SELECT COUNT(*) AS total FROM rptusewaterdetail where ??=? or ?? =?",
-        ["DeviceCode", DeviceCode, "CardCode", CardCode],
-        (e, ress) => {
+    const sqlTotal =
+      "SELECT COUNT(0) item, SUM(??) totalUsage FROM rptusewaterdetail"
+    const placeHolder = ["UseWater"]
+    conn(sqlTotal, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: { status: 404, msg: err },
+        })
+      } else {
+        data.item = ress[0].item
+        data.totalUsage = ress[0].totalUsage
+        const sqlData =
+          "select * from rptusewaterdetail order by ?? DESC limit ?"
+        const dataPlaceholder = ["StopPumpTime", 10]
+        conn(sqlData, dataPlaceholder, (e, r) => {
           if (e) {
-            return res.send({
+            res.send({
               data: null,
               meta: { status: 404, msg: e },
             })
-          }
-          data.total = ress[0].total
-          conn(
-            "select * from rptusewaterdetail where ??=? or ??=? order by StopPumpTime DESC limit 10",
-            ["DeviceCode", DeviceCode, "CardCode", CardCode],
-            (err, result) => {
-              if (err)
-                return res.send({
-                  data: null,
-                  meta: { status: 404, msg: err },
-                })
-              data.userWaterDetailList = result
-              res.send({
-                data: data,
-                meta: { status: 200, msg: err },
-              })
-            }
-          )
-        }
-      )
-    } else {
-      conn("SELECT COUNT(*) AS total FROM rptusewaterdetail", (e, ress) => {
-        if (e) {
-          return res.send({
-            data: null,
-            meta: { status: 404, msg: e },
-          })
-        }
-        data.total = ress[0].total
-        conn(
-          "select * from rptusewaterdetail order by StopPumpTime DESC limit 10",
-          (err, result) => {
-            if (err)
-              return res.send({
-                data: null,
-                meta: { status: 404, msg: err },
-              })
-            data.userWaterDetailList = result
+          } else {
+            data.userWaterDetailList = r
             res.send({
               data: data,
+              meta: { status: 200, msg: e },
+            })
+          }
+        })
+      }
+    })
+  })
+  app.post("/api/useWaterInfoSearch", (req, res) => {
+    const { dataArr, searchType } = req.body
+    const { pageNum } = req.body
+
+    const offSet = pageNum>1?(pageNum - 1) * 10:0
+    if (dataArr.length === 0) {
+      const sql =
+        " select  *, count(*) over() as item, sum(??) over() as totalUsage from rptusewaterdetail where ??=? order by StopPumpTime DESC limit 10 offset ?"
+      const placeHolder = ["UseWater", searchType, req.body[searchType],offSet]
+      conn(sql, placeHolder, (err, ress) => {
+        if (err) {
+          res.send({
+            data: null,
+            meta: { status: 404, msg: err },
+          })
+        }else{
+          res.send({
+            data: ress,
+            meta: { status: 200, msg: err },
+          })
+        }
+      })
+    }else{
+      if(!searchType){
+        const sqlWithDate =  " select  *, count(*) over() as item, sum(??) over() as totalUsage from rptusewaterdetail where ?? >= ? and  ?? <= ? order by ?? DESC limit 10 offSet ?"
+        const placeHolderWithDate = ['UseWater','StopPumpTime',dataArr[0],'StopPumpTime',dataArr[1],'StopPumpTime',offSet]
+        conn(sqlWithDate,placeHolderWithDate,(err,ress)=>{
+          if(err){
+            res.send({
+              data: null,
+              meta: { status: 404, msg: e },
+            })
+          }else{
+            res.send({
+              data: ress,
               meta: { status: 200, msg: err },
             })
           }
-        )
-      })
+        })
+      }else{
+        const sqlWithDateNtype =  " select  *, count(*) over() as item, sum(??) over() as totalUsage from rptusewaterdetail where ?? >= ? and  ?? <= ? and ??=? order by ?? DESC limit 10 offSet ?"
+        const placeHolderWithDateNtype = ['UseWater','StopPumpTime',dataArr[0],'StopPumpTime',dataArr[1],searchType,req.body[searchType],'StopPumpTime',offSet]
+        conn(sqlWithDateNtype,placeHolderWithDateNtype,(err,ress)=>{
+          console.log(err);
+          console.log(ress);
+          if(err){
+            res.send({
+              data: null,
+              meta: { status: 404, msg: err },
+            })
+          }else{
+            res.send({
+              data: ress,
+              meta: { status: 200, msg: err },
+            })
+          }
+        })
+      }
+      
     }
   })
   app.get("/api/wellUseWater/:deviceCode", (req, res) => {
@@ -78,46 +112,6 @@ module.exports = (app) => {
         })
       }
     })
-  })
-  app.post("/api/useWaterInfoPerPage", (req, res) => {
-    const DeviceCode = req.body.DeviceCode.trim()
-    const CardCode = req.body.CardCode.trim()
-    const { pageNum } = req.body
-    const offSet = (pageNum - 1) * 10
-    if (DeviceCode !== "" || CardCode !== "") {
-      conn(
-        "Select * from (SELECT * FROM rptusewaterdetail where ??=? or ?? =? Order by StopPumpTime ) as a limit 10 offset ?",
-        ["DeviceCode", DeviceCode, "CardCode", CardCode, offSet],
-        (err, result) => {
-          if (err)
-            return res.send({
-              data: null,
-              meta: { status: 404, msg: err },
-            })
-          res.send({
-            data: result,
-            meta: { status: 200, msg: err },
-          })
-        }
-      )
-    } else {
-      conn(
-        "select * from rptusewaterdetail order by ?? DESC limit ? offset ?",
-        ["StopPumpTime", 10, offSet],
-
-        (e, result) => {
-          if (e)
-            return res.send({
-              data: null,
-              meta: { status: 404, msg: e },
-            })
-          res.send({
-            data: result,
-            meta: { status: 200, msg: e },
-          })
-        }
-      )
-    }
   })
   app.post("/api/search", (req, res) => {
     const { DeviceCode, CardCode } = req.body
