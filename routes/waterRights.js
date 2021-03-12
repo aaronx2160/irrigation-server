@@ -1,4 +1,5 @@
 const conn = require('../config/db2')
+const dateTime = require('../utils/time')
 
 module.exports = (app) => {
   app.get('/api/AgriUsagePlan', (req, res) => {
@@ -11,5 +12,14 @@ module.exports = (app) => {
         res.send({ data: ress, meta: { err: null, status: 200 } })
       }
     })
+  })
+
+  app.post('/api/addWaterPlan', (req, res) => {
+    console.log(req.body);
+
+    const timeCreated = dateTime(Date.now())
+    console.log(timeCreated);
+    const sql = 'insert into basedistwaterplan value'
+
   })
 }
