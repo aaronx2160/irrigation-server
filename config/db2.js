@@ -23,5 +23,5 @@ module.exports = function (sql, placeHolder, callback) {
         callback(query_err, result)
       })
     }
-  }) 
+  })
 }
