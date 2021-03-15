@@ -6,160 +6,136 @@ const conn = require('../config/db2')
 module.exports = (app) => {
   app.post('/api/login', (req, res) => {
     let { username, password } = req.body.payload
-    try {
-      const sql = 'select * from sysuser where ?? = ?'
-      const placeHolder = ['UserName', username]
-      conn(sql, placeHolder, (err, ress) => {
-        if (ress.length <= 0) {
-          res.send({
-            meta: {
-              msg: '用户名不存在',
-              status: 401,
-            },
-          })
-          return
-        }
-        if (ress[0].IsActive === 0) {
-          res.send({
-            meta: {
-              msg: '该账户未激活，请联系管理员',
-              status: 401,
-            },
-          })
-          return
-        }
-        password = md5(password)
-        if (
-          username !== ress[0].UserName ||
-          password !== ress[0].UserPassword
-        ) {
-          res.send({
-            meta: {
-              msg: '用户名或者密码错误！',
-              status: 401,
-            },
-          })
-          return
-        }
-        let token = jwt.generate({ username: ress[0].UserName })
-        const sqll = 'UPDATE sysuser SET ??=? where ?? =?'
-        const placeHolderr = ['Token', token, 'UserName', username]
-        conn(sqll, placeHolderr, (errr, resss) => {
-          if (errr) {
-            res.send({
-              msg: '登录失败',
-              error: errr.toString(),
-              status: 500,
-            })
-          } else {
-            res.send({
-              data: {
-                id: ress[0].Id,
-                rid: ress[0].RoleCode,
-                username: ress[0].UserName,
-                usercode: ress[0].UserCode,
-                mobile: '123',
-                email: '123@qq.com',
-                token: token,
-              },
-              meta: {
-                msg: '登录成功',
-                status: 200,
-              },
-            })
-          }
+    const sql = 'select * from sysuser where ?? = ?'
+    const placeHolder = ['UserName', username]
+    conn(sql, placeHolder, (err, ress) => {
+      if (ress.length <= 0) {
+        res.send({
+          meta: {
+            msg: '用户名不存在',
+            status: 401,
+          },
         })
-      })
-    } catch (error) {
-      res.send({
-        msg: '登录失败',
-        error: error.toString(),
-        status: 500,
-      })
-    }
-  })
-
-  app.get('/api/roles', (req, res) => {
-    try {
-      const sql = 'select * from  sysrole order by ??'
-      conn(sql, ['CreateTime'], (err, ress) => {
-        if (err) {
+        return
+      }
+      if (ress[0].IsActive === 0) {
+        res.send({
+          meta: {
+            msg: '该账户未激活，请联系管理员',
+            status: 401,
+          },
+        })
+        return
+      }
+      password = md5(password)
+      if (
+        username !== ress[0].UserName ||
+        password !== ress[0].UserPassword
+      ) {
+        res.send({
+          meta: {
+            msg: '用户名或者密码错误！',
+            status: 401,
+          },
+        })
+        return
+      }
+      let token = jwt.generate({ username: ress[0].UserName })
+      const sqll = 'UPDATE sysuser SET ??=? where ?? =?'
+      const placeHolderr = ['Token', token, 'UserName', username]
+      conn(sqll, placeHolderr, (errr, resss) => {
+        if (errr) {
           res.send({
-            meta: {
-              msg: err,
-              status: 404,
-            },
+            msg: '登录失败',
+            error: errr.toString(),
+            status: 500,
           })
         } else {
           res.send({
-            data: ress,
+            data: {
+              id: ress[0].Id,
+              rid: ress[0].RoleCode,
+              username: ress[0].UserName,
+              usercode: ress[0].UserCode,
+              mobile: '123',
+              email: '123@qq.com',
+              token: token,
+            },
             meta: {
-              msg: '获取成功',
+              msg: '登录成功',
               status: 200,
             },
           })
         }
       })
-    } catch (error) {
-      res.send({
-        meta: {
-          msg: error,
-          status: 404,
-        },
-      })
-    }
+    })
+
   })
-  app.post('/api/roles', (req, res) => {
-    try {
-      const { roleName, roleCode, roleDesc } = req.body
-      let id = md5(randomStr.generate(15))
-      if (roleName === '系统管理员' || roleCode === '1') {
+
+  app.get('/api/roles', (req, res) => {
+    const sql = 'select * from  sysrole order by ??'
+    conn(sql, ['CreateTime'], (err, ress) => {
+      if (err) {
         res.send({
-          meta: { msg: '只允许有一个系统管理员（代码1）', status: 501 },
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: '获取成功',
+            status: 200,
+          },
         })
       }
-      const sql =
-        'INSERT INTO sysrole ( ??, ??,??,??,??,??) VALUES ( ?,?,?,?,?,?);'
-      const placeHolder = [
-        'Id',
-        'RoleName',
-        'RoleCode',
-        'Remark',
-        'ParentRoleCode',
-        'CreateTime',
-        id,
-        roleName,
-        roleCode,
-        roleDesc,
-        1,
-        new Date(),
-      ]
-      conn(sql, placeHolder, (err, ress) => {
-        if (err) {
-          res.send({
-            meta: {
-              msg: err,
-              status: 404,
-            },
-          })
-        } else {
-          res.send({
-            data: ress,
-            meta: {
-              msg: '获取成功',
-              status: 201,
-            },
-          })
-        }
-      })
-    } catch (error) {
+    })
+  })
+
+  app.post('/api/roles', (req, res) => {
+    const { roleName, roleCode, roleDesc } = req.body
+    let id = md5(randomStr.generate(15))
+    if (roleName === '系统管理员' || roleCode === '1') {
       res.send({
-        meta: {
-          msg: error,
-          status: 404,
-        },
+        meta: { msg: '只允许有一个系统管理员（代码1）', status: 501 },
       })
     }
+    const sql =
+      'INSERT INTO sysrole ( ??, ??,??,??,??,??) VALUES ( ?,?,?,?,?,?);'
+    const placeHolder = [
+      'Id',
+      'RoleName',
+      'RoleCode',
+      'Remark',
+      'ParentRoleCode',
+      'CreateTime',
+      id,
+      roleName,
+      roleCode,
+      roleDesc,
+      1,
+      new Date(),
+    ]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: '获取成功',
+            status: 201,
+          },
+        })
+      }
+    })
   })
   app.put('/api/roles/:id', (req, res) => {
     const { RoleName, Remark, RoleCode } = req.body
@@ -169,45 +145,37 @@ module.exports = (app) => {
       })
       return
     }
-    try {
-      const { id } = req.params
-      const sql = 'UPDATE sysrole SET ??=?, ??=?, ??=? where ??=?'
-      const placeHolder = [
-        'RoleName',
-        RoleName,
-        'Remark',
-        Remark,
-        'RoleCode',
-        RoleCode,
-        'Id',
-        id,
-      ]
-      conn(sql, placeHolder, (err, ress) => {
-        if (err) {
-          res.send({
-            meta: {
-              msg: JSON.stringify(err),
-              status: 404,
-            },
-          })
-        } else {
-          res.send({
-            data: null,
-            meta: {
-              msg: '更新成功',
-              status: 200,
-            },
-          })
-        }
-      })
-    } catch (error) {
-      res.send({
-        meta: {
-          msg: error,
-          status: 404,
-        },
-      })
-    }
+
+    const { id } = req.params
+    const sql = 'UPDATE sysrole SET ??=?, ??=?, ??=? where ??=?'
+    const placeHolder = [
+      'RoleName',
+      RoleName,
+      'Remark',
+      Remark,
+      'RoleCode',
+      RoleCode,
+      'Id',
+      id,
+    ]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          meta: {
+            msg: JSON.stringify(err),
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: null,
+          meta: {
+            msg: '更新成功',
+            status: 200,
+          },
+        })
+      }
+    })
   })
   app.delete('/api/roles/:id', (req, res) => {
     const { id } = req.params
@@ -217,35 +185,27 @@ module.exports = (app) => {
       })
       return
     }
-    try {
-      const sql = 'DELETE FROM sysrole WHERE ??=?'
-      const placeHolder = ['Id', id]
-      conn(sql, placeHolder, (err, ress) => {
-        if (err) {
-          res.send({
-            meta: {
-              msg: err,
-              status: 404,
-            },
-          })
-        } else {
-          res.send({
-            data: null,
-            meta: {
-              msg: '删除成功',
-              status: 200,
-            },
-          })
-        }
-      })
-    } catch (error) {
-      res.send({
-        meta: {
-          msg: error,
-          status: 404,
-        },
-      })
-    }
+
+    const sql = 'DELETE FROM sysrole WHERE ??=?'
+    const placeHolder = ['Id', id]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: null,
+          meta: {
+            msg: '删除成功',
+            status: 200,
+          },
+        })
+      }
+    })
   })
   app.get('/api/defaultRights/:roleId', (req, res) => {
     const { roleId } = req.params
@@ -328,135 +288,110 @@ module.exports = (app) => {
     const { username } = req.params
 
     oldPswd = md5(oldPswd)
-    try {
-      if (newPswd !== pswdConfirm) {
+
+    if (newPswd !== pswdConfirm) {
+      res.send({
+        meta: {
+          msg: '两次输入的新密码不一致',
+          status: 401,
+        },
+      })
+      return
+    }
+    const sql = 'select ?? from sysuser where ?? =?'
+    const placeHolder = ['UserPassword', 'UserName', username]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
         res.send({
           meta: {
-            msg: '两次输入的新密码不一致',
+            msg: err,
+            status: 404,
+          },
+        })
+      } else if (oldPswd !== ress[0].UserPassword) {
+        res.send({
+          meta: {
+            msg: '您输入的旧密码不正确！',
             status: 401,
           },
         })
         return
+      } else {
+        newPswd = md5(newPswd)
+        const sqll = 'UPDATE sysuser SET ??=? WHERE ??=?'
+        const placeHolderr = ['UserPassword', newPswd, 'UserName', username]
+        conn(sqll, placeHolderr, (errr, resss) => {
+          if (errr) {
+            res.send({
+              meta: {
+                msg: errr,
+                status: 404,
+              },
+            })
+          } else {
+            res.send({
+              data: null,
+              meta: {
+                msg: '密码修改成功',
+                status: 200,
+              },
+            })
+          }
+        })
       }
-      const sql = 'select ?? from sysuser where ?? =?'
-      const placeHolder = ['UserPassword', 'UserName', username]
-      conn(sql, placeHolder, (err, ress) => {
-        if (err) {
-          res.send({
-            meta: {
-              msg: err,
-              status: 404,
-            },
-          })
-        } else if (oldPswd !== ress[0].UserPassword) {
-          res.send({
-            meta: {
-              msg: '您输入的旧密码不正确！',
-              status: 401,
-            },
-          })
-          return
-        } else {
-          newPswd = md5(newPswd)
-          const sqll = 'UPDATE sysuser SET ??=? WHERE ??=?'
-          const placeHolderr = ['UserPassword', newPswd, 'UserName', username]
-          conn(sqll, placeHolderr, (errr, resss) => {
-            if (errr) {
-              res.send({
-                meta: {
-                  msg: errr,
-                  status: 404,
-                },
-              })
-            } else {
-              res.send({
-                data: null,
-                meta: {
-                  msg: '密码修改成功',
-                  status: 200,
-                },
-              })
-            }
-          })
-        }
-      })
-    } catch (error) {
-      res.send({
-        meta: {
-          msg: '密码修改失败',
-          status: 404,
-          error,
-        },
-      })
-    }
+    })
   })
   app.get('/api/users', (req, res) => {
-    try {
-      conn('select * from sysuser', (error, result) => {
-        if (error) {
-          res.send({
-            data: null,
-            meta: {
-              msg: error,
-              status: 404,
-            },
-          })
-        } else {
-          result.forEach((v) => {
-            v.token = null
-            v.UserPassword = null
-            v.UserPasswordming = null
-          })
-          res.send({
-            data: result,
-            meta: {
-              msg: '获取用户列表成功',
-              status: 200,
-            },
-          })
-        }
-      })
-    } catch (error) {
-      res.send({
-        meta: {
-          msg: error,
-          status: 404,
-        },
-      })
-    }
+
+    conn('select * from sysuser', (error, result) => {
+      if (error) {
+        res.send({
+          data: null,
+          meta: {
+            msg: error,
+            status: 404,
+          },
+        })
+      } else {
+        result.forEach((v) => {
+          v.token = null
+          v.UserPassword = null
+          v.UserPasswordming = null
+        })
+        res.send({
+          data: result,
+          meta: {
+            msg: '获取用户列表成功',
+            status: 200,
+          },
+        })
+      }
+    })
   })
   app.put('/api/user/:id', (req, res) => {
     const Id = req.params.id
     let { userstate } = req.body
-    try {
-      userstate = userstate === true ? 1 : 0
-      const sql = 'UPDATE sysuser SET ??=?, ??=? WHERE ??=?'
-      const placeHolder = ['AuditFlag', userstate, 'Token', null, 'Id', Id]
-      conn(sql, placeHolder, (err, ress) => {
-        if (err) {
-          res.send({
-            meta: {
-              status: 404,
-              msg: err,
-            },
-          })
-        } else {
-          res.send({
-            meta: {
-              status: 200,
-              msg: ress,
-            },
-          })
-        }
-      })
-    } catch (err) {
-      res.send({
-        meta: {
-          status: 404,
-          msg: err,
-        },
-      })
-    }
+
+    userstate = userstate === true ? 1 : 0
+    const sql = 'UPDATE sysuser SET ??=?, ??=? WHERE ??=?'
+    const placeHolder = ['AuditFlag', userstate, 'Token', null, 'Id', Id]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          meta: {
+            status: 404,
+            msg: err,
+          },
+        })
+      } else {
+        res.send({
+          meta: {
+            status: 200,
+            msg: ress,
+          },
+        })
+      }
+    })
   })
   app.post('/api/users', async (req, res) => {
     const Id = md5(randomStr.generate(10))

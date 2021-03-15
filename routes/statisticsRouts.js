@@ -153,8 +153,8 @@ module.exports = (app) => {
 
   app.post('/api/waterCard', (req, res) => {
     const deviceId = req.body
-    const sql = 'select * from basecardinfo where ?? in (?)'
-    const placeHolder = ['DeviceId', deviceId]
+    const sql = 'select * from basecardinfo where ?? in (?) order by ??'
+    const placeHolder = ['DeviceId', deviceId, 'CreateTime']
     conn(sql, placeHolder, (err, ress) => {
       if (err)
         return res.send({
@@ -205,6 +205,26 @@ module.exports = (app) => {
       }
     })
   })
+  app.get('/api/rptusewaterdetail/:DeviceCode', (req, res) => {
+    const year = new Date().getFullYear()
+    console.log(year);
+    const { DeviceCode } = req.params
+    const sql = 'select * from rptusewaterdetail where ??=? and ??=?'
+    const placeHolder = ['DeviceCode', DeviceCode, 'InYear', year]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: { status: 404, msg: err },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: { status: 200, msg: err },
+        })
+      }
+    })
+  })
 
   app.post('/api/DownloadData', (req, res) => {
     const { dataRange, searchType } = req.body
@@ -212,14 +232,64 @@ module.exports = (app) => {
       const sqlWithoutDate = 'select * from rptusewaterdetail where ?? =?'
       const placeHolderWithoutDate = [searchType, req.body[searchType]]
       conn(sqlWithoutDate, placeHolderWithoutDate, (err, ress) => {
-        console.log(err)
+        if (err) {
+          res.send({
+            data: null,
+            meta: { status: 404, msg: err },
+          })
+        } else if (ress.length === 0) {
+          res.send({
+            data: null,
+            meta: { status: 404, msg: '未找到任何数据，请您核实搜索信息是否正确' },
+          })
+        }
+        else {
+          res.send({
+            data: ress,
+            meta: { status: 200, msg: err },
+          })
+        }
+      })
+    } else if (searchType === '') {
+      const sqlDate = 'select * from rptusewaterdetail where ?? >=? and ?? <=?'
+      const placeHolderDate = ['StopPumpTime', dataRange[0], 'StopPumpTime', dataRange[1]]
+      conn(sqlDate, placeHolderDate, (err, ress) => {
+        if (err) {
+          res.send({
+            data: null,
+            meta: { status: 404, msg: err },
+          })
+        } else if (ress.length === 0) {
+          res.send({
+            data: null,
+            meta: { status: 404, msg: '未找到任何数据，请您核实搜索信息是否正确' },
+          })
+        }
+        else {
+          res.send({
+            data: ress,
+            meta: { status: 200, msg: err },
+          })
+        }
+      })
+    } else {
+      const sql = 'select * from rptusewaterdetail where ?? =? and ?? >=? and ?? <=?'
+      const placeHolder = [searchType, req.body[searchType], 'StopPumpTime', dataRange[0], 'StopPumpTime', dataRange[1]]
+      conn(sql, placeHolder, (err, ress) => {
+        console.log(err);
         console.log(ress)
         if (err) {
           res.send({
             data: null,
             meta: { status: 404, msg: err },
           })
-        } else {
+        } else if (ress.length === 0) {
+          res.send({
+            data: null,
+            meta: { status: 404, msg: '未找到任何数据，请您核实搜索信息是否正确' },
+          })
+        }
+        else {
           res.send({
             data: ress,
             meta: { status: 200, msg: err },
