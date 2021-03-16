@@ -168,6 +168,25 @@ module.exports = (app) => {
     })
   })
 
+  app.delete('/api/waterCard/:Id', (req, res) => {
+
+    const { Id } = req.params
+    const sql = 'DELETE FROM basecardinfo WHERE ??=?'
+    const placeHolder = ['Id', Id]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err)
+        return res.send({
+          data: null,
+          meta: { status: 404, msg: err },
+        })
+      res.send({
+        data: ress,
+        meta: { status: 200, msg: err },
+      })
+    })
+
+  })
+
   app.get('/api/deviceExpandInfo/:deviceId', (req, res) => {
     const { deviceId } = req.params
     const sql =
