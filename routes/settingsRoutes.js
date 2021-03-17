@@ -54,30 +54,30 @@ module.exports = (app) => {
     })
   })
   app.get("/api/liveDataList", async (req, res) => {
-   
-      conn(
-        "SELECT * FROM basedeviceinfo t1 LEFT JOIN basedevicedynamicinfo t2 ON t1.Id = t2.DeviceId where ??=? order by ?? DESC",
-        ["WaterAreaId", 1, "t2.CollectTime"],
-        (err, result) => {
-          if (err) {
-            res.send({
-              data: null,
-              meta: {
-                msg: err,
-                status: 404,
-              },
-            })
-          } else {
-            res.send({
-              data: result,
-              meta: {
-                msg: "获取机井列表成功",
-                status: 200,
-              },
-            })
-          }
+
+    conn(
+      "SELECT * FROM basedeviceinfo t1 LEFT JOIN basedevicedynamicinfo t2 ON t1.Id = t2.DeviceId where ??=? order by ?? DESC",
+      ["WaterAreaId", 1, "t2.CollectTime"],
+      (err, result) => {
+        if (err) {
+          res.send({
+            data: null,
+            meta: {
+              msg: err,
+              status: 404,
+            },
+          })
+        } else {
+          res.send({
+            data: result,
+            meta: {
+              msg: "获取机井列表成功",
+              status: 200,
+            },
+          })
         }
-      )
+      }
+    )
   })
   app.get("/api/waterAreas", async (req, res) => {
     conn("select * from syswaterarea2", (err, result) => {
@@ -103,55 +103,44 @@ module.exports = (app) => {
   app.post("/api/waterArea", (req, res) => {
     const { province, city, district, waterAdmin, areaCode, remark } = req.body
     const time = timeNow(Date.now())
-
-    try {
-      conn(
-        "insert into syswaterarea2 (??,??,??,??,??,??,??) values(?,?,?,?,?,?,?);",
-        [
-          "areaCode",
-          "province",
-          "city",
-          "district",
-          "admin",
-          "createdAt",
-          "note",
-          areaCode,
-          province,
-          city,
-          district,
-          waterAdmin,
-          time,
-          remark,
-        ],
-        (err, result) => {
-          if (err) {
-            res.send({
-              data: null,
-              meta: {
-                msg: err,
-                status: 404,
-              },
-            })
-          } else {
-            res.send({
-              data: result,
-              meta: {
-                msg: "成功添加水管区域列表",
-                status: 200,
-              },
-            })
-          }
+    conn(
+      "insert into syswaterarea2 (??,??,??,??,??,??,??) values(?,?,?,?,?,?,?);",
+      [
+        "areaCode",
+        "province",
+        "city",
+        "district",
+        "admin",
+        "createdAt",
+        "note",
+        areaCode,
+        province,
+        city,
+        district,
+        waterAdmin,
+        time,
+        remark,
+      ],
+      (err, result) => {
+        if (err) {
+          res.send({
+            data: null,
+            meta: {
+              msg: err,
+              status: 404,
+            },
+          })
+        } else {
+          res.send({
+            data: result,
+            meta: {
+              msg: "成功添加水管区域列表",
+              status: 200,
+            },
+          })
         }
-      )
-    } catch (error) {
-      res.send({
-        data: null,
-        meta: {
-          msg: error,
-          status: 404,
-        },
-      })
-    }
+      }
+    )
   })
   app.put("/api/editWaterArea", (req, res) => {
     const { id, province, city, district, admin, areaCode, note } = req.body
@@ -255,34 +244,34 @@ module.exports = (app) => {
     }
   })
   app.post('/api/addArea', (req, res) => {
- const {province,city,district,town,village,areaCode,remark}=req.body
- const createdAt = timeNow(Date.now())
-      const sql = "insert into sysarea2 (??,??,??,??,??,??,??,??) values(?,?,?,?,?,?,?,?);"
-      const placeHolder = ['areaCode','province','city','district','town','village','createdAt','note',areaCode,province,city,district,town,village,createdAt,remark]
-      conn(sql, placeHolder, (err, ress) => {
-        if (err) {
-          res.send({
-            data: null,
-            meta: {
-              msg: '获取地域列表失败',
-              status: 404,
-              error,
-            },
-          })
-        } else {
-          res.send({
-            data: ress,
-            meta: {
-              msg: '成功获取地域列表',
-              status: 200,
-            },
-          })
-        }
-      })
+    const { province, city, district, town, village, areaCode, remark } = req.body
+    const createdAt = timeNow(Date.now())
+    const sql = "insert into sysarea2 (??,??,??,??,??,??,??,??) values(?,?,?,?,?,?,?,?);"
+    const placeHolder = ['areaCode', 'province', 'city', 'district', 'town', 'village', 'createdAt', 'note', areaCode, province, city, district, town, village, createdAt, remark]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: {
+            msg: '获取地域列表失败',
+            status: 404,
+            err,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: '成功获取地域列表',
+            status: 200,
+          },
+        })
+      }
+    })
   })
-  app.put('/api/editArea',(req,res)=>{
+  app.put('/api/editArea', (req, res) => {
     console.log(req.body);
-    const { id, province, city, district, town, village,areaCode, note } = req.body
+    const { id, province, city, district, town, village, areaCode, note } = req.body
     const updatedAt = timeNow(Date.now())
     const sql =
       "UPDATE sysarea2  SET ??=?,??=?,??=?,??=?,??=?,??=?, ??=?, ??=?  WHERE ?? = ?;"

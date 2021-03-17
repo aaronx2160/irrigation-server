@@ -42,6 +42,7 @@ require('./routes/statisticsRouts')(app)
 require('./routes/waterRights')(app)
 require('./routes/chargeRoutes')(app)
 require('./routes/chartRoutes')(app)
+require('./routes/alarmRoutes')(app)
 
 const PORT = process.env.PORT || 5000
 
