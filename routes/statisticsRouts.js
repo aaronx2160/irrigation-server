@@ -39,7 +39,24 @@ module.exports = (app) => {
     const { pageNum } = req.body
 
     const offSet = pageNum > 1 ? (pageNum - 1) * 10 : 0
-    if (dataArr.length === 0) {
+    if (dataArr.length === 0 && !searchType) {
+      const sql =
+        ' select  *, count(*) over() as item, sum(??) over() as totalUsage from rptusewaterdetail order by StopPumpTime DESC limit 10 offset ?'
+      const placeHolder = ['UseWater', offSet]
+      conn(sql, placeHolder, (err, ress) => {
+        if (err) {
+          res.send({
+            data: null,
+            meta: { status: 404, msg: err },
+          })
+        } else {
+          res.send({
+            data: ress,
+            meta: { status: 200, msg: err },
+          })
+        }
+      })
+    } else if (dataArr.length === 0) {
       const sql =
         ' select  *, count(*) over() as item, sum(??) over() as totalUsage from rptusewaterdetail where ??=? order by StopPumpTime DESC limit 10 offset ?'
       const placeHolder = ['UseWater', searchType, req.body[searchType], offSet]
@@ -97,8 +114,6 @@ module.exports = (app) => {
           offSet,
         ]
         conn(sqlWithDateNtype, placeHolderWithDateNtype, (err, ress) => {
-          console.log(err)
-          console.log(ress)
           if (err) {
             res.send({
               data: null,
@@ -226,7 +241,6 @@ module.exports = (app) => {
   })
   app.get('/api/rptusewaterdetail/:DeviceCode', (req, res) => {
     const year = new Date().getFullYear()
-    console.log(year);
     const { DeviceCode } = req.params
     const sql = 'select * from rptusewaterdetail where ??=? and ??=?'
     const placeHolder = ['DeviceCode', DeviceCode, 'InYear', year]
@@ -295,8 +309,6 @@ module.exports = (app) => {
       const sql = 'select * from rptusewaterdetail where ?? =? and ?? >=? and ?? <=?'
       const placeHolder = [searchType, req.body[searchType], 'StopPumpTime', dataRange[0], 'StopPumpTime', dataRange[1]]
       conn(sql, placeHolder, (err, ress) => {
-        console.log(err);
-        console.log(ress)
         if (err) {
           res.send({
             data: null,
@@ -316,5 +328,43 @@ module.exports = (app) => {
         }
       })
     }
+  })
+
+  app.get('/api/rptchargeddetail', (req, res) => {
+    const sql = 'select * , count(*) over() as total from rptchargedetail order by ?? desc limit ?'
+    const placeHolder = ['CreateTime', 10]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: { status: 404, msg: err },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: { status: 200, msg: err },
+        })
+      }
+    })
+  })
+
+  app.post('/api/rptchargeddetail', (req, res) => {
+    const { pageNum } = req.body
+    const offset = (pageNum - 1) * 10
+    const sql = 'select * , count(*) over() as total from rptchargedetail order by ?? desc limit ? offset ?'
+    const placeHolder = ['CreateTime', 10, offset]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: { status: 404, msg: err },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: { status: 200, msg: err },
+        })
+      }
+    })
   })
 }
