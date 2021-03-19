@@ -11,7 +11,7 @@
  Target Server Version : 80016
  File Encoding         : 65001
 
- Date: 13/03/2021 15:10:52
+ Date: 19/03/2021 18:08:17
 */
 
 SET NAMES utf8mb4;
@@ -674,7 +674,6 @@ INSERT INTO `basecardinfo` VALUES ('1cc126425f314515ac01ab57a6811081', '5f4a9df2
 INSERT INTO `basecardinfo` VALUES ('1e11f9f8c91f49f4ad27afb2bce31547', '240af753505a4a54831b675ddd78701c', '237C3E80', 1, '0000000000400000', '00000000004', '00000000004', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, NULL, NULL, '2018-06-15 19:45:27', '2018-06-15 19:45:27');
 INSERT INTO `basecardinfo` VALUES ('2112adbe18e54cf9a99aa133038ae549', '2018e7095a704ba9a4daac1c172d147f', '28409ED6', 1, '6103041122020001', '联合村2号井', '123456', 427.00, 524.00, 0.00, 0.00, 4270.00, 5240.00, 49999276.00, 499992760.00, 10.00, '2021-02-23 09:02:25', '2021-02-23 16:58:58', '2021-01-28 18:14:49', '2021-02-23 16:58:58');
 INSERT INTO `basecardinfo` VALUES ('233620c77a5440ee89408bfcf59d6af3', '3b4307efd34647cf86a3dec1ed76d711', 'DDDB06AA', 1, '8101010000050101', '黑河水电2', '', 3.00, 42.00, 12.00, 186.00, 0.00, 0.00, 29506.00, 0.00, 0.00, '2016-12-23 16:19:25', '2017-04-21 19:01:10', NULL, '2017-04-21 19:01:12');
-INSERT INTO `basecardinfo` VALUES ('2362c662b15d46c6adca32e4ab1df1b8', 'd94d4cd6f4cb4397bffd68d056a18d56', '62DF66C4', 1, '6100000000010004', '123123', '1234694', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 900000000.00, 410065408.00, 0.00, NULL, NULL, '2021-03-01 16:35:16', '2021-03-01 16:35:35');
 INSERT INTO `basecardinfo` VALUES ('23670d333429405885fdf088f1d23fba', '09257540246a404783c9faa9a320793c', '2CE9ED13', 1, '6103041122130001', '联合村13号井', '123456', 2.00, 389.00, 0.00, 0.00, 20.00, 3890.00, 49999612.00, 499996120.00, 10.00, '2021-03-05 18:50:18', '2021-03-05 18:55:56', '2021-01-28 18:27:06', '2021-03-05 18:55:56');
 INSERT INTO `basecardinfo` VALUES ('25adc45b97f44ddc922b4a5ca15fc574', '73cccc63b2af428fb3ab2b18acf44ed1', 'C97DBB54', 1, '3930064600010101', 'xilin03', '13000000000', 0.00, 15951.00, 0.00, 0.00, 0.00, 31902000.00, 396.00, 792000.00, 0.00, '2018-06-13 14:31:25', '2018-06-13 14:32:47', '2018-05-19 17:57:34', '2018-06-13 14:32:50');
 INSERT INTO `basecardinfo` VALUES ('25f224e8b192400e9ff4c0d919f681cb', '64fe11b934e94ba8a9d012ad0cc08ff8', 'C962EBA4', 2, '370283120003', '朱光军', '13045042919', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, NULL, NULL, '2019-03-01 14:57:33', '2019-03-01 14:57:33');
@@ -912,6 +911,7 @@ INSERT INTO `basecardinfo` VALUES ('faeb4d4fa76c41ac94365c9a348bb2e8', '62ea7447
 INSERT INTO `basecardinfo` VALUES ('fb65fa381d0147588fa152d8566334ab', '3aff011e48f14b27a2912b447b2f3a0d', '711DD6D6', 1, '3702120000041001', 'admin', '111111111111', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 10990.00, 109900.00, 10.00, NULL, NULL, '2020-05-16 20:57:13', '2021-02-09 08:46:09');
 INSERT INTO `basecardinfo` VALUES ('fd14b5adbd014f56a8f74c5ba093cedb', 'd6a758e86fe840e188f650c65a28db4a', '538577DB', 1, '8101080000400101', '上浦普燕文养殖场', '15599388235', 9.00, 1809.00, 33.00, 6804.00, 90.00, 18090.00, 9991.00, 99910.00, 0.00, '2017-05-17 17:32:59', '2017-06-02 13:13:03', '2019-04-17 11:47:52', '2017-06-02 13:13:10');
 INSERT INTO `basecardinfo` VALUES ('ff970e6c9a704e979bbb31b279b11698', '6481d4aa940a4f6eb76b59c4b703e627', '2CE9DF05', 1, '6103041123200001', '宁王村20号井', '123456', 0.00, 4932.00, 0.00, 0.00, 0.00, 49320.00, 49995068.00, 499950680.00, 10.00, '2021-02-23 14:17:06', '2021-02-23 14:17:27', '2021-01-28 18:43:29', '2021-02-23 14:17:28');
+INSERT INTO `basecardinfo` VALUES ('sdfasd', 'sfgasdg', '', 1, '6103041122010001', '宁王村200号井', '123456', 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for basecropinfo
@@ -1999,7 +1999,7 @@ CREATE TABLE `basedistwaterplan2`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '配水计划表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 153 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '配水计划表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for basedistwaterplandevice
@@ -10917,7 +10917,7 @@ INSERT INTO `rptusewaterdetail` VALUES ('fffdf89d55284e5e93805f6cef132be5', '610
 -- ----------------------------
 DROP TABLE IF EXISTS `sysaccendantmodel`;
 CREATE TABLE `sysaccendantmodel`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `Name` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '维修人员姓名',
   `Phone` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '维修人员电话',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
@@ -10928,9 +10928,9 @@ CREATE TABLE `sysaccendantmodel`  (
 -- ----------------------------
 -- Records of sysaccendantmodel
 -- ----------------------------
-INSERT INTO `sysaccendantmodel` VALUES ('7257bd1e957e4fccb39d12fb1f7f373e', '张2', '12', '2019-10-11 15:48:43', '2019-10-12 10:41:11');
-INSERT INTO `sysaccendantmodel` VALUES ('d8ccff88d2b5409b94e3716e0b500372', '张三', '15805088868', '2019-10-12 11:17:04', '2019-10-12 11:17:04');
-INSERT INTO `sysaccendantmodel` VALUES ('ef42b98284ee4b17af2310c0b599d96c', '李四', '123', '2019-10-11 15:21:43', '2019-10-11 15:21:43');
+INSERT INTO `sysaccendantmodel` VALUES (1, '张2', '12', '2019-10-11 15:48:43', '2019-10-12 10:41:11');
+INSERT INTO `sysaccendantmodel` VALUES (2, '张三', '15805088868', '2019-10-12 11:17:04', '2019-10-12 11:17:04');
+INSERT INTO `sysaccendantmodel` VALUES (3, '李四', '123', '2019-10-11 15:21:43', '2019-10-11 15:21:43');
 
 -- ----------------------------
 -- Table structure for sysaccredit
@@ -10955,7 +10955,7 @@ CREATE TABLE `sysaccredit`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `sysapplystatus`;
 CREATE TABLE `sysapplystatus`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `ApplyStatus` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '应用状况',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -10965,9 +10965,9 @@ CREATE TABLE `sysapplystatus`  (
 -- ----------------------------
 -- Records of sysapplystatus
 -- ----------------------------
-INSERT INTO `sysapplystatus` VALUES ('2233aa4656504aa594aaa4242cf7e274', '废弃', '2016-10-16 11:19:05', '2016-10-16 11:19:05');
-INSERT INTO `sysapplystatus` VALUES ('5fb5a8771d2a47519fed6424aaa98434', '停用', '2016-10-16 11:19:19', '2016-10-16 11:19:19');
-INSERT INTO `sysapplystatus` VALUES ('8d3a35c276b24629b873deebf5c3f3aa', '正常使用', '2016-10-16 11:18:57', '2016-10-16 11:18:57');
+INSERT INTO `sysapplystatus` VALUES (1, '废弃', '2016-10-16 11:19:05', '2016-10-16 11:19:05');
+INSERT INTO `sysapplystatus` VALUES (2, '停用', '2016-10-16 11:19:19', '2016-10-16 11:19:19');
+INSERT INTO `sysapplystatus` VALUES (3, '正常使用', '2016-10-16 11:18:57', '2016-10-16 11:18:57');
 
 -- ----------------------------
 -- Table structure for sysarea
@@ -11143,7 +11143,7 @@ INSERT INTO `sysarea2` VALUES (4, 23, '陕西省', '宝鸡市', '陈仓区', '�
 -- ----------------------------
 DROP TABLE IF EXISTS `sysdevicemodel`;
 CREATE TABLE `sysdevicemodel`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `DeviceModel` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '机井设备型号',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -11153,9 +11153,9 @@ CREATE TABLE `sysdevicemodel`  (
 -- ----------------------------
 -- Records of sysdevicemodel
 -- ----------------------------
-INSERT INTO `sysdevicemodel` VALUES ('1', 'KR1101', '2016-08-11 23:22:45', '2016-12-15 18:18:15');
-INSERT INTO `sysdevicemodel` VALUES ('2', 'HZQP-JI', '2016-08-11 23:22:55', '2016-11-09 11:41:20');
-INSERT INTO `sysdevicemodel` VALUES ('dd4568d3f86c48b39be37d02feddbcf6', 'TJ710', '2018-05-08 09:00:59', '2018-05-08 09:00:59');
+INSERT INTO `sysdevicemodel` VALUES (1, 'KR1101', '2016-08-11 23:22:45', '2016-12-15 18:18:15');
+INSERT INTO `sysdevicemodel` VALUES (2, 'HZQP-JI', '2016-08-11 23:22:55', '2016-11-09 11:41:20');
+INSERT INTO `sysdevicemodel` VALUES (3, 'TJ710', '2018-05-08 09:00:59', '2018-05-08 09:00:59');
 
 -- ----------------------------
 -- Table structure for sysinfo
@@ -11173,7 +11173,7 @@ CREATE TABLE `sysinfo`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `sysirrigationareatype`;
 CREATE TABLE `sysirrigationareatype`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `IrrigationAreaType` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '灌区类型',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -11183,16 +11183,16 @@ CREATE TABLE `sysirrigationareatype`  (
 -- ----------------------------
 -- Records of sysirrigationareatype
 -- ----------------------------
-INSERT INTO `sysirrigationareatype` VALUES ('8f5f3ffa21bd4987ab39c584c3d5aef3', '井灌区', '2016-09-23 14:19:51', '2016-11-09 11:35:05');
-INSERT INTO `sysirrigationareatype` VALUES ('914180d3bf5e4d7dbd4f08183e6b33c1', '河灌区', '2016-10-16 11:21:47', '2016-10-16 11:21:47');
-INSERT INTO `sysirrigationareatype` VALUES ('bf2dd8f067cf4bdab05e4e87eb439c18', '井河混灌区', '2016-10-16 11:22:03', '2016-10-16 11:22:03');
+INSERT INTO `sysirrigationareatype` VALUES (1, '井灌区', '2016-09-23 14:19:51', '2016-11-09 11:35:05');
+INSERT INTO `sysirrigationareatype` VALUES (2, '河灌区', '2016-10-16 11:21:47', '2016-10-16 11:21:47');
+INSERT INTO `sysirrigationareatype` VALUES (3, '井河混灌区', '2016-10-16 11:22:03', '2016-10-16 11:22:03');
 
 -- ----------------------------
 -- Table structure for sysirrigationmode
 -- ----------------------------
 DROP TABLE IF EXISTS `sysirrigationmode`;
 CREATE TABLE `sysirrigationmode`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `IrrigationMode` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '灌溉模式',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -11202,19 +11202,19 @@ CREATE TABLE `sysirrigationmode`  (
 -- ----------------------------
 -- Records of sysirrigationmode
 -- ----------------------------
-INSERT INTO `sysirrigationmode` VALUES ('38caa48c439546aabe3044bbe6453458', '渠灌', '2016-11-09 11:33:26', '2016-11-09 11:33:26');
-INSERT INTO `sysirrigationmode` VALUES ('8f5f3ffa21bd4987ab39c584c3d5aef3', '管灌', '2016-09-23 14:19:51', '2016-10-16 11:20:46');
-INSERT INTO `sysirrigationmode` VALUES ('906e4745ff17454aa401877aeb5c4b9b', '滴灌', '2016-10-16 08:23:54', '2016-10-16 08:23:54');
-INSERT INTO `sysirrigationmode` VALUES ('b8ed1c77d0e74bd491b4430c1f20d01d', '地源热泵', '2016-11-20 09:15:57', '2016-11-20 09:15:57');
-INSERT INTO `sysirrigationmode` VALUES ('d3d73b52c46c4d06aed6ace16eef8808', '井灌', '2016-10-16 11:21:07', '2017-03-12 21:07:25');
-INSERT INTO `sysirrigationmode` VALUES ('fd66dcc9faf44d6d862836c0902a6957', '正常工业用水', '2016-11-20 09:16:09', '2016-11-20 09:16:09');
+INSERT INTO `sysirrigationmode` VALUES (1, '渠灌', '2016-11-09 11:33:26', '2016-11-09 11:33:26');
+INSERT INTO `sysirrigationmode` VALUES (2, '管灌', '2016-09-23 14:19:51', '2016-10-16 11:20:46');
+INSERT INTO `sysirrigationmode` VALUES (3, '滴灌', '2016-10-16 08:23:54', '2016-10-16 08:23:54');
+INSERT INTO `sysirrigationmode` VALUES (4, '地源热泵', '2016-11-20 09:15:57', '2016-11-20 09:15:57');
+INSERT INTO `sysirrigationmode` VALUES (5, '井灌', '2016-10-16 11:21:07', '2017-03-12 21:07:25');
+INSERT INTO `sysirrigationmode` VALUES (6, '正常工业用水', '2016-11-20 09:16:09', '2016-11-20 09:16:09');
 
 -- ----------------------------
 -- Table structure for syslandformtype
 -- ----------------------------
 DROP TABLE IF EXISTS `syslandformtype`;
 CREATE TABLE `syslandformtype`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `LandformType` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '地貌类型',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -11224,12 +11224,12 @@ CREATE TABLE `syslandformtype`  (
 -- ----------------------------
 -- Records of syslandformtype
 -- ----------------------------
-INSERT INTO `syslandformtype` VALUES ('25410f5bb45c479cb196be4f47899b77', '风蚀地貌', '2016-10-18 20:57:31', '2016-10-18 20:57:31');
-INSERT INTO `syslandformtype` VALUES ('2e826c78f6914157b8c24eb50f86ad74', '喀斯特地貌', '2016-10-18 20:56:55', '2016-10-18 20:56:55');
-INSERT INTO `syslandformtype` VALUES ('7f0d0e4c9f6c4264a53a6ebba9a3e80f', '冰川地貌', '2016-10-18 20:57:24', '2016-10-18 20:57:24');
-INSERT INTO `syslandformtype` VALUES ('a65105542d1b45c1b6cf7362c142f45d', '黄土地貌', '2016-10-18 20:57:16', '2016-10-18 20:57:16');
-INSERT INTO `syslandformtype` VALUES ('ba6868e153fc40aeb6d26a6d6370292f', '丹霞地貌', '2016-10-18 20:57:06', '2016-10-18 20:57:06');
-INSERT INTO `syslandformtype` VALUES ('f80c89f5bc3146739585338a2d481c65', '火山地貌', '2016-10-18 20:57:39', '2016-10-18 20:57:39');
+INSERT INTO `syslandformtype` VALUES (1, '风蚀地貌', '2016-10-18 20:57:31', '2016-10-18 20:57:31');
+INSERT INTO `syslandformtype` VALUES (2, '喀斯特地貌', '2016-10-18 20:56:55', '2016-10-18 20:56:55');
+INSERT INTO `syslandformtype` VALUES (3, '冰川地貌', '2016-10-18 20:57:24', '2016-10-18 20:57:24');
+INSERT INTO `syslandformtype` VALUES (4, '黄土地貌', '2016-10-18 20:57:16', '2016-10-18 20:57:16');
+INSERT INTO `syslandformtype` VALUES (5, '丹霞地貌', '2016-10-18 20:57:06', '2016-10-18 20:57:06');
+INSERT INTO `syslandformtype` VALUES (6, '火山地貌', '2016-10-18 20:57:39', '2016-10-18 20:57:39');
 
 -- ----------------------------
 -- Table structure for sysloginfo
@@ -11250,7 +11250,7 @@ CREATE TABLE `sysloginfo`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `sysmeasuretype`;
 CREATE TABLE `sysmeasuretype`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `MeasureType` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '计量设施类型',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -11260,11 +11260,11 @@ CREATE TABLE `sysmeasuretype`  (
 -- ----------------------------
 -- Records of sysmeasuretype
 -- ----------------------------
-INSERT INTO `sysmeasuretype` VALUES ('3ca12ca4d7d1461a878149d8b71116f7', '超声波水表计量', '2016-10-16 11:22:52', '2016-10-16 11:22:52');
-INSERT INTO `sysmeasuretype` VALUES ('6c9bad1890a44dc69c5f4ffbd0ccdb6f', '管段式超声波水表计量', '2016-11-09 11:38:02', '2016-11-09 11:38:02');
-INSERT INTO `sysmeasuretype` VALUES ('8f5f3ffa21bd4987ab39c584c3d5aef3', '电计量', '2016-09-23 14:19:51', '2016-10-16 11:22:40');
-INSERT INTO `sysmeasuretype` VALUES ('ab2aeb87318f48a4bf81a2340c00a0a5', '机械水表计量', '2016-10-16 11:23:06', '2016-11-09 11:36:49');
-INSERT INTO `sysmeasuretype` VALUES ('ea47ea87a86d418dae7719081a850580', '脉冲水表计量', '2016-11-21 14:58:01', '2016-11-21 14:58:01');
+INSERT INTO `sysmeasuretype` VALUES (1, '超声波水表计量', '2016-10-16 11:22:52', '2016-10-16 11:22:52');
+INSERT INTO `sysmeasuretype` VALUES (2, '管段式超声波水表计量', '2016-11-09 11:38:02', '2016-11-09 11:38:02');
+INSERT INTO `sysmeasuretype` VALUES (3, '电计量', '2016-09-23 14:19:51', '2016-10-16 11:22:40');
+INSERT INTO `sysmeasuretype` VALUES (4, '机械水表计量', '2016-10-16 11:23:06', '2016-11-09 11:36:49');
+INSERT INTO `sysmeasuretype` VALUES (5, '脉冲水表计量', '2016-11-21 14:58:01', '2016-11-21 14:58:01');
 
 -- ----------------------------
 -- Table structure for sysmenu
@@ -11288,6 +11288,7 @@ CREATE TABLE `sysmenu`  (
 -- ----------------------------
 -- Records of sysmenu
 -- ----------------------------
+INSERT INTO `sysmenu` VALUES ('', '', '', 0, '', 'basicInfoHome/WaterTyp', '', 51, NULL, NULL, '');
 INSERT INTO `sysmenu` VALUES ('1', '1', '实时监测', 1, '', 'monitor/index.do', 'monitor', 1, '2016-08-20 11:40:54', NULL, '');
 INSERT INTO `sysmenu` VALUES ('10', '10', '机井故障告警', 2, '3', 'history/alarm.do', '', 10, '2016-08-20 11:58:14', NULL, '');
 INSERT INTO `sysmenu` VALUES ('11', '11', '用水量告警', 2, '3', 'history/water.do', '', 11, '2016-08-20 11:58:11', NULL, '');
@@ -11330,11 +11331,29 @@ INSERT INTO `sysmenu` VALUES ('44', '44', '三条红线', 2, '3', 'threeRedLineA
 INSERT INTO `sysmenu` VALUES ('45', '45', '异常机井智能分析', 2, '3', 'intelligentAnalysis/index.do', '', 45, '2016-11-29 09:38:18', NULL, '');
 INSERT INTO `sysmenu` VALUES ('46', '46', '异常机井处理查询', 2, '3', 'intelligentDeal/intelligentDeal.do', '', 46, '2017-01-12 17:13:57', NULL, '');
 INSERT INTO `sysmenu` VALUES ('47', '47', '设备实时告警', 2, '3', 'device/realTimeAlarm.do', '', 0, '2018-07-06 09:52:35', NULL, '');
+INSERT INTO `sysmenu` VALUES ('48', '48', '数据下载', 2, '2', 'dataDownload', '', 48, '2016-08-20 11:58:16', NULL, '');
 INSERT INTO `sysmenu` VALUES ('5', '5', '信息发布', 1, '', 'information/index.do', 'information', 8, '2016-08-20 11:48:00', NULL, '');
 INSERT INTO `sysmenu` VALUES ('52', '52', '水卡信息查询', 2, '2', 'waterCardInfo/waterCardInfo.do', '', 52, '2016-11-06 08:31:13', NULL, '');
 INSERT INTO `sysmenu` VALUES ('53', '53', '机井充值统计', 2, '2', 'wellsRechargeStatistics/wellsRecharge.do', '', 53, '2019-09-10 15:45:28', NULL, '');
 INSERT INTO `sysmenu` VALUES ('6', '6', '电子地图', 2, '1', 'monitor/map.do', '', 6, '2016-08-20 11:49:42', NULL, '');
+INSERT INTO `sysmenu` VALUES ('60', '60', '运营商', 3, '25', 'basicInfoHome/Providers', '', 60, '2016-08-20 11:58:16', NULL, '');
+INSERT INTO `sysmenu` VALUES ('61', '61', '泵管材质', 3, '25', 'basicInfoHome/PumpPipeMaterial', '', 61, '2016-08-20 11:58:16', NULL, '');
+INSERT INTO `sysmenu` VALUES ('63', '63', '应用状况', 3, '25', 'basicInfoHome/WellStatus', '', 63, '2021-03-19 11:32:44', NULL, '');
+INSERT INTO `sysmenu` VALUES ('64', '64', '水井用途', 3, '25', 'basicInfoHome/WellUse', '', 64, '2021-03-19 11:37:43', NULL, '');
+INSERT INTO `sysmenu` VALUES ('65', '65', '灌溉模式', 3, '25', 'basicInfoHome/IrrigationPattern', '', 65, '2021-03-19 11:37:50', NULL, '');
+INSERT INTO `sysmenu` VALUES ('66', '66', '灌区类型', 3, '25', 'basicInfoHome/IrrigationAreaType', '', 66, '2021-03-19 11:37:53', NULL, '');
+INSERT INTO `sysmenu` VALUES ('67', '67', '地貌类型', 3, '25', 'basicInfoHome/GeomorphicType', '', 67, '2021-03-19 11:37:56', NULL, '');
+INSERT INTO `sysmenu` VALUES ('68', '68', '计量设施类型', 3, '25', 'basicInfoHome/MeasureEquipmentType', '', 68, '2021-03-19 11:37:59', NULL, '');
+INSERT INTO `sysmenu` VALUES ('69', '69', '机井设备型号', 3, '25', 'basicInfoHome/WellEquipmentModel', '', 69, '2021-03-19 11:38:02', NULL, '');
 INSERT INTO `sysmenu` VALUES ('7', '7', '实时数据', 2, '1', 'monitor/data.do', '', 7, '2016-08-20 11:50:26', NULL, '');
+INSERT INTO `sysmenu` VALUES ('70', '70', '取水类型', 3, '25', 'basicInfoHome/WaterType', '', 70, '2021-03-19 17:42:17', NULL, '');
+INSERT INTO `sysmenu` VALUES ('71', '71', '水费管理', 3, '19', 'paraSettingsHome/waterFee', '', 71, '2021-03-19 11:38:05', NULL, '');
+INSERT INTO `sysmenu` VALUES ('72', '72', '水资源设置', 3, '19', 'paraSettingsHome/WaterResource', '', 72, '2021-03-19 11:38:05', NULL, '');
+INSERT INTO `sysmenu` VALUES ('73', '73', '计量水费设置', 3, '19', 'paraSettingsHome/WaterMeter', '', 73, '2021-03-19 11:38:05', NULL, '');
+INSERT INTO `sysmenu` VALUES ('74', '74', '三相电压', 3, '19', 'paraSettingsHome/ThreePhaseVoltage', '', 74, '2021-03-19 11:38:05', NULL, '');
+INSERT INTO `sysmenu` VALUES ('75', '75', '功率设置', 3, '19', 'paraSettingsHome/PowerSetting', '', 75, '2021-03-19 11:38:05', NULL, '');
+INSERT INTO `sysmenu` VALUES ('76', '76', '异常参数设置', 3, '19', 'paraSettingsHome/ExceptParams', '', 76, '2021-03-19 11:38:05', NULL, '');
+INSERT INTO `sysmenu` VALUES ('77', '77', '维修人员', 3, '25', 'basicInfoHome/MaintenanceStaff', '', 77, '2021-03-19 11:38:05', NULL, '');
 INSERT INTO `sysmenu` VALUES ('8', '8', '收费管理', 1, '', 'baseChargeManage/index.do', 'charge', 3, '2016-11-20 19:43:17', NULL, '');
 INSERT INTO `sysmenu` VALUES ('9', '9', '充值统计', 2, '2', 'statistic/money.do', '', 9, '2016-08-20 11:58:16', NULL, '');
 
@@ -11343,19 +11362,19 @@ INSERT INTO `sysmenu` VALUES ('9', '9', '充值统计', 2, '2', 'statistic/money
 -- ----------------------------
 DROP TABLE IF EXISTS `sysoperator`;
 CREATE TABLE `sysoperator`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` int(11) NOT NULL  AUTO_INCREMENT COMMENT '标识，guid',
   `Operator` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '运营商（如移动、联通、电信等）',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '运营商表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '运营商表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysoperator
 -- ----------------------------
-INSERT INTO `sysoperator` VALUES ('0c12724e69ca406e83ec2d0a1125d6c2', '中国电信', '2016-10-17 15:36:14', '2018-11-09 17:02:08');
-INSERT INTO `sysoperator` VALUES ('1f407fffd73b494a8080b7760b22f07c', '中国移动', '2016-10-17 15:36:08', '2016-10-17 15:36:08');
-INSERT INTO `sysoperator` VALUES ('ac792c1d0d9e45128f8abab43f99b721', '中国联通', '2016-10-17 15:35:59', '2016-10-17 16:49:50');
+INSERT INTO `sysoperator` VALUES (1, '中国电信', '2016-10-17 15:36:14', '2018-11-09 17:02:08');
+INSERT INTO `sysoperator` VALUES (2, '中国移动', '2016-10-17 15:36:08', '2016-10-17 15:36:08');
+INSERT INTO `sysoperator` VALUES (3, '中国联通', '2016-10-17 15:35:59', '2016-10-17 16:49:50');
 
 -- ----------------------------
 -- Table structure for sysparam
@@ -11373,7 +11392,7 @@ CREATE TABLE `sysparam`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `syspumpmaterial`;
 CREATE TABLE `syspumpmaterial`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `PumpMaterial` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '泵管材质（如铝合金、塑钢、铸铁等）',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -11383,8 +11402,8 @@ CREATE TABLE `syspumpmaterial`  (
 -- ----------------------------
 -- Records of syspumpmaterial
 -- ----------------------------
-INSERT INTO `syspumpmaterial` VALUES ('1', '普通碳钢管', '2016-10-12 18:46:40', NULL);
-INSERT INTO `syspumpmaterial` VALUES ('2', '普通塑料管', '2016-10-12 18:54:51', NULL);
+INSERT INTO `syspumpmaterial` VALUES (1, '普通碳钢管', '2016-10-12 18:46:40', NULL);
+INSERT INTO `syspumpmaterial` VALUES (2, '普通塑料管', '2016-10-12 18:54:51', NULL);
 
 -- ----------------------------
 -- Table structure for sysrole
@@ -11406,8 +11425,8 @@ CREATE TABLE `sysrole`  (
 -- ----------------------------
 -- Records of sysrole
 -- ----------------------------
-INSERT INTO `sysrole` VALUES ('32099d718bc5fda1bd7a9fc02fc1b884', 3, '水利局管理员', '1', '2021-03-06 11:13:52', NULL, '水利局管理', '1,31,6,7,2,32,33,36,37,38,52,53,27,3,24,45,46,47,4,13,14,16,17,19,25,30,8,40,41,42,26');
-INSERT INTO `sysrole` VALUES ('d19f652acb4f4812b13b9b7c9a899d52', 1, '系统管理员', '', '2016-08-22 21:54:35', '2017-06-01 16:33:32', '超级管理员', '1,31,6,7,2,32,33,36,37,38,52,53,26,27,28,29,3,24,45,46,47,4,13,14,16,17,19,25,30,8,40,41,42');
+INSERT INTO `sysrole` VALUES ('32099d718bc5fda1bd7a9fc02fc1b884', 3, '水利局管理员', '1', '2021-03-06 11:13:52', NULL, '水利局管理', '1,31,6,7,32,33,36,38,48,52,53,26,27,28,29,3,24,45,46,47,4,13,14,16,17,19,25,30,8,40,41,42,2,49,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77');
+INSERT INTO `sysrole` VALUES ('d19f652acb4f4812b13b9b7c9a899d52', 1, '系统管理员', '', '2016-08-22 21:54:35', '2017-06-01 16:33:32', '超级管理员', '77,49,48,1,31,6,7,2,32,33,36,37,38,52,53,26,27,28,29,3,24,45,46,47,4,13,14,16,17,19,25,30,8,40,41,42,,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76');
 
 -- ----------------------------
 -- Table structure for sysshortmsg
@@ -11462,8 +11481,8 @@ CREATE TABLE `sysuser`  (
 -- ----------------------------
 -- Records of sysuser
 -- ----------------------------
-INSERT INTO `sysuser` VALUES ('051826f548ff440ebfa68def08ea8c10', 'e2ce28b64f344408a36c4857ddf741ec', '40c695c43a6848c78e4f834beb76e2ed', 'dongyuan', 'dongyuan', '38b5897b6f905728e4056e1fcfe0d698', '1', 3, '东远测试', '13812345678', '', '', '2020-12-18 16:41:35', '2020-12-18 16:41:35', 'dongyuan123', 0, 1, 0, NULL, 0, '', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvbmd5dWFuIiwiaWF0IjoxNjE1NTM0MjE5LCJleHAiOjE2MTU2MjA2MTl9.LIHk4Q3Pby-SVeECX4v8UeiDCyAOfFnmMisu6YJGDNA');
-INSERT INTO `sysuser` VALUES ('c0aedd4cded74fad8963226c83cbc965', '100c690948969d1316b377bdf0e73068', '200c690948969d1316b377bdf0e73068', '1', 'admin', 'dca9055249c3cdb09e457e4d33afdd35', '', 1, 'admin', '18219864776', '1454635698@qq.com', '', '2016-08-22 21:53:01', '2018-11-14 14:26:17', 'jixunwulian', 1, 1, 0, NULL, 0, '系统超级管理员', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjE1NTIwNTMyLCJleHAiOjE2MTU2MDY5MzJ9.JsLmtAx4_w8YRPJDJbXR3py3oSlW7eXRCIoA5mFKjec');
+INSERT INTO `sysuser` VALUES ('051826f548ff440ebfa68def08ea8c10', 'e2ce28b64f344408a36c4857ddf741ec', '40c695c43a6848c78e4f834beb76e2ed', 'dongyuan', 'dongyuan', '38b5897b6f905728e4056e1fcfe0d698', '1', 3, '东远测试', '13812345678', '', '', '2020-12-18 16:41:35', '2020-12-18 16:41:35', 'dongyuan123', 0, 1, 0, NULL, 1, '', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvbmd5dWFuIiwiaWF0IjoxNjE2MTQ3Mjk5LCJleHAiOjE2MTYyMzM2OTl9.p_qm1IKAmxpoyKtIPEZJ01neh7ikqXgpD_PZc6qUKAM');
+INSERT INTO `sysuser` VALUES ('c0aedd4cded74fad8963226c83cbc965', '100c690948969d1316b377bdf0e73068', '200c690948969d1316b377bdf0e73068', '1', 'admin', 'dca9055249c3cdb09e457e4d33afdd35', '', 1, 'admin', '18219864776', '1454635698@qq.com', '', '2016-08-22 21:53:01', '2018-11-14 14:26:17', 'jixunwulian', 1, 1, 0, NULL, 1, '系统超级管理员', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjE2MTQ2NjIyLCJleHAiOjE2MTYyMzMwMjJ9.LlaUF69av2tOxVBZAQ6jAQmUNYJGmKweKXF6hDGTMYs');
 
 -- ----------------------------
 -- Table structure for sysuserwater
@@ -11492,7 +11511,7 @@ INSERT INTO `sysuserwater` VALUES ('8178a72f2d8b459d8fe3f2e4588ac9fb', '20210223
 -- ----------------------------
 DROP TABLE IF EXISTS `sysusewatertype`;
 CREATE TABLE `sysusewatertype`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `UseWaterType` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '取水类型',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -11502,8 +11521,8 @@ CREATE TABLE `sysusewatertype`  (
 -- ----------------------------
 -- Records of sysusewatertype
 -- ----------------------------
-INSERT INTO `sysusewatertype` VALUES ('6ce2883a8a8e40d7b8abd5f9403586bd', '地表水', '2016-10-14 11:06:16', '2016-11-09 10:27:25');
-INSERT INTO `sysusewatertype` VALUES ('da3952bdc624431eb007926624487589', '地下水', '2016-10-16 11:18:34', '2016-11-09 10:25:28');
+INSERT INTO `sysusewatertype` VALUES (1, '地表水', '2016-10-14 11:06:16', '2016-11-09 10:27:25');
+INSERT INTO `sysusewatertype` VALUES (2, '地下水', '2016-10-16 11:18:34', '2016-11-09 10:25:28');
 
 -- ----------------------------
 -- Table structure for syswaterarea
@@ -11585,7 +11604,7 @@ INSERT INTO `syswaterarea2` VALUES (1, 610304, '陕西省', '宝鸡市', '陈仓
 -- ----------------------------
 DROP TABLE IF EXISTS `syswelluse`;
 CREATE TABLE `syswelluse`  (
-  `Id` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL  AUTO_INCREMENT COMMENT '标识，guid',
   `WellUse` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '水井用途',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -11595,9 +11614,9 @@ CREATE TABLE `syswelluse`  (
 -- ----------------------------
 -- Records of syswelluse
 -- ----------------------------
-INSERT INTO `syswelluse` VALUES ('41a899ceaf2746749da139af7e5d0967', '工业', '2016-12-07 15:59:08', '2016-12-07 15:59:08');
-INSERT INTO `syswelluse` VALUES ('d6120ec49eaf4ada9f94b56955be4796', '生活', '2016-12-07 15:59:13', '2016-12-07 15:59:13');
-INSERT INTO `syswelluse` VALUES ('d9df4257d9d049b295081e415848f0b2', '灌溉', '2016-10-16 09:07:25', '2016-10-16 09:07:25');
+INSERT INTO `syswelluse` VALUES (2, '工业', '2016-12-07 15:59:08', '2016-12-07 15:59:08');
+INSERT INTO `syswelluse` VALUES (3, '生活', '2016-12-07 15:59:13', '2016-12-07 15:59:13');
+INSERT INTO `syswelluse` VALUES (4, '灌溉', '2016-10-16 09:07:25', '2016-10-16 09:07:25');
 
 -- ----------------------------
 -- Table structure for taskusewaterinfomodel
