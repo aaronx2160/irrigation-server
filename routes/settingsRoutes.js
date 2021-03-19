@@ -317,6 +317,201 @@ module.exports = (app) => {
       }
     })
   })
+  app.get('/api/basicInfo/:type', (req, res) => {
+    const { type } = req.params
+    const sql = 'select * from ??'
+    placeHolder = [type]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: null,
+            status: 200,
+          },
+        })
+      }
+    })
+  })
+  app.post('/api/basicInfo', (req, res) => {
+    const { type, name, colName } = req.body
+    const time = timeNow(Date.now())
+    const sql = 'INSERT INTO ?? ( ??,?? ) VALUES (?, ?)'
+    placeHolder = [type, colName, 'CreateTime', name, time]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: null,
+            status: 200,
+          },
+        })
+      }
+    })
+  })
+  app.put('/api/basicInfo', (req, res) => {
+    const { id, type, name, colName } = req.body
+    const time = timeNow(Date.now())
+    const sql = 'UPDATE ?? SET ??=?, ??=? WHERE ??=?'
+    placeHolder = [type, colName, name, 'EditTime', time, 'Id', id]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: null,
+            status: 200,
+          },
+        })
+      }
+    })
+  })
+  app.delete('/api/basicInfo/:type/:id', (req, res) => {
+    const { id, type } = req.params
+    const sql = 'delete from ??  WHERE ??=?'
+    placeHolder = [type, 'Id', id]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: null,
+            status: 200,
+          },
+        })
+      }
+    })
+  })
+  app.get('/api/handyman', (req, res) => {
+    const sql = 'select * from ??'
+    placeHolder = ['sysaccendantmodel']
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: null,
+            status: 200,
+          },
+        })
+      }
+    })
+  })
+  app.post('/api/handyman', (req, res) => {
+    const { name, phone } = req.body
+    const time = timeNow(Date.now())
+    const sql = 'INSERT INTO ?? ( ??,??,?? ) VALUES (?, ?,?)'
+    placeHolder = ['sysaccendantmodel', 'Name', 'Phone', 'CreateTime', name, phone, time]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: null,
+            status: 200,
+          },
+        })
+      }
+    })
+  })
+  app.put('/api/handyman', (req, res) => {
+    const { Id, Name, Phone } = req.body
+    const time = timeNow(Date.now())
+    const sql = 'UPDATE ?? SET ??=?, ??=?,??=? WHERE ??=?'
+    placeHolder = ['sysaccendantmodel', 'Name', Name, 'Phone', Phone, 'EditTime', time, 'Id', Id]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: null,
+            status: 200,
+          },
+        })
+      }
+    })
+  })
+  app.delete('/api/handyman/:id', (req, res) => {
+    const { id } = req.params
+    const sql = 'delete from ??  WHERE ??=?'
+    placeHolder = ['sysaccendantmodel', 'Id', id]
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          data: null,
+          meta: {
+            msg: err,
+            status: 404,
+          },
+        })
+      } else {
+        res.send({
+          data: ress,
+          meta: {
+            msg: null,
+            status: 200,
+          },
+        })
+      }
+    })
+  })
   app.get("/api/deviceModel", (req, res) => {
     const sql = "select ?? from sysdevicemodel"
     conn(sql, ["DeviceModel"], (err, ress) => {
