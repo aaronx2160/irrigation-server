@@ -375,7 +375,7 @@ module.exports = (app) => {
 
     userstate = userstate === true ? 1 : 0
     const sql = 'UPDATE sysuser SET ??=?, ??=? WHERE ??=?'
-    const placeHolder = ['AuditFlag', userstate, 'Token', null, 'Id', Id]
+    const placeHolder = ['IsActive', userstate, 'Token', null, 'Id', Id]
     conn(sql, placeHolder, (err, ress) => {
       if (err) {
         res.send({
