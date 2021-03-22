@@ -9,6 +9,7 @@ module.exports = (app) => {
     const sql = 'select * from sysuser where ?? = ?'
     const placeHolder = ['UserName', username]
     conn(sql, placeHolder, (err, ress) => {
+      console.log(err);
       if (ress.length <= 0) {
         res.send({
           meta: {

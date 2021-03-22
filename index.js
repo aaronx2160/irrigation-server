@@ -1,11 +1,13 @@
 const express = require('express')
 const path = require('path')
-
 const bodyParser = require('body-parser')
 const jwt = require('./utils/jwt')
 const app = express()
 
 app.use(bodyParser.json())
+
+app.use(express.static(path.join(__dirname, 'public')))
+
 
 let i = 0
 app.all('/*', (request, res, next) => {
@@ -35,6 +37,7 @@ app.all('/*', (request, res, next) => {
       return
     })
 })
+
 
 require('./routes/authRoutes')(app)
 require('./routes/menuRoutes')(app)

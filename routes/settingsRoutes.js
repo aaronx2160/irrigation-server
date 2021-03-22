@@ -4,21 +4,10 @@ const getYMDHMS = require('../utils/time')
 const config = require('../config/config')
 const timeNow = require('../utils/time')
 const multer = require('multer')
-const path = require('path')
+const upload = require('../utils/upload')
 
-let upload = multer({
-  storage: multer.diskStorage({
-    // destination: function (req, file, cb) {
-    //   cb(null, './uploads/')
 
-    // },
-    destination: './uploads/',
-    filename: function (req, file, cb) {
-      var changedName = new Date().getTime() + '-' + file.originalname
-      cb(null, changedName)
-    },
-  }),
-})
+
 
 module.exports = (app) => {
   app.get('/api/wellList', (req, res) => {
@@ -179,7 +168,7 @@ module.exports = (app) => {
     ]
     conn(sql, placeHolder, (err, ress) => {
       if (err) {
-        console.log(err)
+
         res.send({
           data: null,
           meta: {
@@ -188,7 +177,7 @@ module.exports = (app) => {
           },
         })
       } else {
-        console.log(ress)
+
         res.send({
           data: ress,
           meta: {
@@ -308,7 +297,6 @@ module.exports = (app) => {
     })
   })
   app.put('/api/editArea', (req, res) => {
-    console.log(req.body)
     const {
       id,
       province,
@@ -344,7 +332,6 @@ module.exports = (app) => {
     ]
     conn(sql, placeHolder, (err, ress) => {
       if (err) {
-        console.log(err)
         res.send({
           data: null,
           meta: {
@@ -353,7 +340,6 @@ module.exports = (app) => {
           },
         })
       } else {
-        console.log(ress)
         res.send({
           data: ress,
           meta: {
@@ -636,7 +622,6 @@ module.exports = (app) => {
     const deviceInsertObj = {}
     const deviceExInsertObj = {}
     const errArr = []
-
     //insert into deviceinfo table starts
     const deviceInfoSql =
       'select COLUMN_NAME,column_comment from INFORMATION_SCHEMA.Columns where table_name=? and table_schema=?'
@@ -694,7 +679,6 @@ module.exports = (app) => {
         }
         delete deviceExInsertObj['DeviceId']
         deviceExInsertObj['MakeTime'] = getYMDHMS(Date.now())
-        console.log(deviceExInsertObj)
         conn(
           'insert into basedeviceexpandinfo set ?? = ?',
           ['DeviceId', id],
@@ -734,8 +718,42 @@ module.exports = (app) => {
       })
     })
   })
-  app.post('/api/imgUpload', upload.array('file'), (req, res) => {
-    console.log(req.files)
+  app.post('/api/imgUpload', (req, res) => {
+    let storeFile = upload.single('file')
+    const { type } = req.headers
+    storeFile(req, res, function (err) {
+      if (err instanceof multer.MulterError) {
+        // A Multer error occurred when uploading.
+        res.send({
+          data: null,
+          meta: {
+            status: 404,
+            msg: '上传失败'
+          }
+        })
+      } else if (err) {
+        res.send({
+          data: null,
+          meta: {
+            status: 404,
+            msg: err
+          }
+        })
+        // An unknown error occurred when uploading.
+      } else {
+        filePath = req.file.filename
+
+        res.send({
+          data: { filePath, type },
+          meta: {
+            status: 200,
+            msg: '上传成功'
+          }
+        })
+      }
+
+    })
+
   })
   app.delete('/api/deleteWell/:Id', (req, res) => {
     const { Id } = req.params
