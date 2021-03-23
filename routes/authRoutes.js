@@ -2,6 +2,7 @@ const jwt = require('../utils/jwt')
 const md5 = require('md5-node')
 const randomStr = require('../utils/randomStr')
 const conn = require('../config/db2')
+const time = require('../utils/time')
 
 module.exports = (app) => {
   app.post('/api/login', (req, res) => {
@@ -9,7 +10,6 @@ module.exports = (app) => {
     const sql = 'select * from sysuser where ?? = ?'
     const placeHolder = ['UserName', username]
     conn(sql, placeHolder, (err, ress) => {
-      console.log(err);
       if (ress.length <= 0) {
         res.send({
           meta: {
@@ -58,6 +58,7 @@ module.exports = (app) => {
               rid: ress[0].RoleCode,
               username: ress[0].UserName,
               usercode: ress[0].UserCode,
+              parentUserCode: ress[0].ParentUserCode,
               mobile: '123',
               email: '123@qq.com',
               token: token,
@@ -97,11 +98,13 @@ module.exports = (app) => {
 
   app.post('/api/roles', (req, res) => {
     const { roleName, roleCode, roleDesc } = req.body
+    console.log(req.body);
     let id = md5(randomStr.generate(15))
     if (roleName === '系统管理员' || roleCode === '1') {
       res.send({
         meta: { msg: '只允许有一个系统管理员（代码1）', status: 501 },
       })
+      return
     }
     const sql =
       'INSERT INTO sysrole ( ??, ??,??,??,??,??) VALUES ( ?,?,?,?,?,?);'
@@ -139,8 +142,10 @@ module.exports = (app) => {
     })
   })
   app.put('/api/roles/:id', (req, res) => {
-    const { RoleName, Remark, RoleCode } = req.body
-    if (RoleName === '系统管理员' || RoleCode === '1') {
+    let { RoleName, Remark, RoleCode } = req.body
+    console.log(RoleCode);
+    RoleCode = parseInt(RoleCode)
+    if (RoleCode === 1) {
       res.send({
         meta: { msg: '您无权修改系统管理员角色', status: 501 },
       })
@@ -252,7 +257,14 @@ module.exports = (app) => {
     )
   })
   app.post('/api/editRights', (req, res) => {
-    const { menuId, roleCode } = req.body
+    let { menuId, roleCode } = req.body
+    roleCode = parseInt(roleCode)
+    if (roleCode === 1) {
+      res.send({
+        meta: { msg: '您无权修改系统管理员角色', status: 501 },
+      })
+      return
+    }
     conn(
       'UPDATE sysrole SET ?? = ? WHERE ?? = ?',
       ['MenuId', menuId, 'RoleCode', roleCode],
@@ -372,7 +384,6 @@ module.exports = (app) => {
   app.put('/api/user/:id', (req, res) => {
     const Id = req.params.id
     let { userstate } = req.body
-
     userstate = userstate === true ? 1 : 0
     const sql = 'UPDATE sysuser SET ??=?, ??=? WHERE ??=?'
     const placeHolder = ['IsActive', userstate, 'Token', null, 'Id', Id]
@@ -396,63 +407,29 @@ module.exports = (app) => {
   })
   app.post('/api/users', async (req, res) => {
     const Id = md5(randomStr.generate(10))
-    let {
-      WaterAreaId,
-      AreaId,
-      UserCode,
-      UserName,
-      UserPassword,
-      Authority,
-      FullName,
-      Mobile,
-      Email,
-      Address,
-      Remark,
-      ParentCode,
-    } = req.body
-    UserPassword = md5(UserPassword)
-    conn(
-      'INSERT INTO sysuser ( Id, AreaId, WaterAreaId,UserCode, UserName, ParentUserCode, UserPassword, FullName, Mobile, Email, Address, Remark, Authority, IsAppUser ) VALUES( ?, ?,?, ?, ?,?,?, ?,?,?, ?,?,?, ?)',
-      [
-        Id,
-        AreaId,
-        WaterAreaId,
-        UserCode,
-        UserName,
-        ParentCode,
-        UserPassword,
-        FullName,
-        Mobile,
-        Email,
-        Address,
-        Remark,
-        Authority,
-        0,
-      ],
-      (err, result) => {
-        if (err) {
-          res.send({
-            data: null,
-            meta: {
-              status: 404,
-              msg: '增加用户失败',
-            },
-          })
-        } else {
-          res.send({
-            data: result,
-            meta: {
-              status: 200,
-              msg: '成功添加新用户',
-            },
-          })
-        }
+    let keysArr = Object.keys(req.body)
+    keysArr.push('Id')
+    const { Address, AreaId, AuditFlag, Authority, Email, FullName, IsActive, IsAppUser, Mobile, ParentUserCode, Remark, RoleCode, UserCode, UserName, UserPasswordming, WaterAreaId } = req.body
+    const UserPassword = md5(UserPasswordming)
+    const CreateTime = time(Date.now())
+    const sql = 'INSERT INTO sysuser(Id,AreaId,WaterAreaId,UserCode,UserName,UserPassword,ParentUserCode,RoleCode,FullName,Mobile,Email,Address,CreateTime,UserPasswordming,Authority,IsActive,IsAppUser,AuditFlag,Remark) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+    const placeHolder = [Id, AreaId, WaterAreaId, UserCode, UserName, UserPassword, ParentUserCode, RoleCode, FullName, Mobile, Email, Address, CreateTime, UserPasswordming, Authority, IsActive, IsAppUser, AuditFlag, Remark]
+
+    conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({ data: null, meta: { status: 404, msg: err } })
+      } else {
+        res.send({ data: ress, meta: { status: 200, msg: err } })
       }
-    )
+    })
   })
 
   app.delete('/api/user/:id', (req, res) => {
     const { id } = req.params
+    if (id === '4f55ef95b22221a523744db7cc702c1e') {
+      res.send({ data: null, meta: { status: 404, msg: '没有权限' } })
+      return
+    }
     conn('DELETE FROM sysuser WHERE ?? = ? ', ['Id', id], (err, result) => {
       if (err) {
         res.send({
