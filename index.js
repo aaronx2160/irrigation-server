@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const jwt = require('./utils/jwt')
 const app = express()
 
+
 app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -39,6 +40,7 @@ app.all('/*', (request, res, next) => {
 })
 
 
+
 require('./routes/authRoutes')(app)
 require('./routes/menuRoutes')(app)
 require('./routes/settingsRoutes')(app)
@@ -51,3 +53,5 @@ require('./routes/alarmRoutes')(app)
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT)
+
+require('./ws')

@@ -10,6 +10,15 @@ module.exports = (app) => {
     const sql = 'select * from sysuser where ?? = ?'
     const placeHolder = ['UserName', username]
     conn(sql, placeHolder, (err, ress) => {
+      if (err) {
+        res.send({
+          meta: {
+            msg: '获取用户登录信息失败',
+            status: 401,
+          },
+        })
+        return
+      }
       if (ress.length <= 0) {
         res.send({
           meta: {
@@ -98,7 +107,6 @@ module.exports = (app) => {
 
   app.post('/api/roles', (req, res) => {
     const { roleName, roleCode, roleDesc } = req.body
-    console.log(req.body);
     let id = md5(randomStr.generate(15))
     if (roleName === '系统管理员' || roleCode === '1') {
       res.send({
@@ -143,7 +151,6 @@ module.exports = (app) => {
   })
   app.put('/api/roles/:id', (req, res) => {
     let { RoleName, Remark, RoleCode } = req.body
-    console.log(RoleCode);
     RoleCode = parseInt(RoleCode)
     if (RoleCode === 1) {
       res.send({
@@ -151,7 +158,6 @@ module.exports = (app) => {
       })
       return
     }
-
     const { id } = req.params
     const sql = 'UPDATE sysrole SET ??=?, ??=?, ??=? where ??=?'
     const placeHolder = [
@@ -174,7 +180,7 @@ module.exports = (app) => {
         })
       } else {
         res.send({
-          data: null,
+          data: ress,
           meta: {
             msg: '更新成功',
             status: 200,
@@ -356,7 +362,7 @@ module.exports = (app) => {
   })
   app.get('/api/users', (req, res) => {
 
-    conn('select * from sysuser', (error, result) => {
+    conn('select * from sysuser order by ??', ['UserCode'], (error, result) => {
       if (error) {
         res.send({
           data: null,
@@ -367,7 +373,7 @@ module.exports = (app) => {
         })
       } else {
         result.forEach((v) => {
-          v.token = null
+          v.Token = null
           v.UserPassword = null
           v.UserPasswordming = null
         })
@@ -381,7 +387,7 @@ module.exports = (app) => {
       }
     })
   })
-  app.put('/api/user/:id', (req, res) => {
+  app.put('/api/userState/:id', (req, res) => {
     const Id = req.params.id
     let { userstate } = req.body
     userstate = userstate === true ? 1 : 0
@@ -423,14 +429,47 @@ module.exports = (app) => {
       }
     })
   })
-
+  app.put('/api/userEdit', (req, res) => {
+    const userEditObj = req.body
+    const EditTime = time(Date.now())
+    const pswd = md5(userEditObj.UserPasswordming)
+    userEditObj.EditTime = EditTime
+    userEditObj.UserPassword = pswd
+    const userEditKeysArr = Object.keys(userEditObj)
+    const errArr = []
+    for (let i = 0; i < userEditKeysArr.length; i++) {
+      let sql = "UPDATE sysuser SET ??=? WHERE ??=?"
+      placeHolder = [userEditKeysArr[i], userEditObj[userEditKeysArr[i]], "Id", userEditObj['Id']]
+      conn(sql, placeHolder, (err, ress) => {
+        if (err) {
+          errArr.push(err)
+          return
+        }
+      })
+    }
+    if (errArr.length > 0) {
+      res.send({
+        data: null,
+        meta: { msg: '修改用户失败', status: 404 }
+      })
+    } else {
+      res.send({
+        data: null,
+        meta: { msg: '修改用户成功', status: 200 }
+      })
+    }
+  })
   app.delete('/api/user/:id', (req, res) => {
     const { id } = req.params
     if (id === '4f55ef95b22221a523744db7cc702c1e') {
       res.send({ data: null, meta: { status: 404, msg: '没有权限' } })
       return
     }
+    console.log(req.params);
     conn('DELETE FROM sysuser WHERE ?? = ? ', ['Id', id], (err, result) => {
+
+      console.log(err);
+      console.log(result);
       if (err) {
         res.send({
           data: null,
