@@ -11,7 +11,7 @@
  Target Server Version : 80016
  File Encoding         : 65001
 
- Date: 19/03/2021 18:08:17
+ Date: 27/03/2021 15:03:41
 */
 
 SET NAMES utf8mb4;
@@ -1082,12 +1082,14 @@ INSERT INTO `basedeviceexpandinfo` VALUES ('45499291e6aa4404bbcd8f738751f38b', '
 INSERT INTO `basedeviceexpandinfo` VALUES ('47fab1af1ce646a0973b168749981625', '7208666741', '', 0.00, 0.00, '普通碳钢管', '2018-05-09 14:26:27', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '生活', '井灌', 0.00, 0.00, 0, 0, '', 0.00, 0, 0.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('49f833c3e28b4cf8832f65b7674857cf', '6103040304', '', 0.00, 0.00, '普通碳钢管', '2021-01-27 10:56:54', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '灌溉', '井灌', 0.00, 500000.00, 0, 0, '', 9999999999.00, 0, 9999999999.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('4a2b2c5b713e4c178ce325524400de88', '7208666744', '', 0.00, 0.00, '普通碳钢管', '2018-05-09 14:19:53', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '生活', '井灌', 0.00, 0.00, 0, 0, '', 0.00, 0, 0.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
+INSERT INTO `basedeviceexpandinfo` VALUES ('4e28c1cd517ec49a45db423d10daadaf', '6103040101', '', 0.00, 0.00, '普通碳钢管', '2021-03-22 12:02:22', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '灌溉', '井灌', 0.00, 200.00, 0, 0, '', 0.00, 0, 0.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('5eab0a634714454a9f503fd1be91b861', '7208666789', '', 0.00, 0.00, '普通碳钢管', '2018-05-09 15:44:58', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '生活', '井灌', 0.00, 0.00, 0, 0, '', 0.00, 0, 0.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('5f4586ed621644249b9427607a8cfce2', '6103040311', '', 0.00, 0.00, '普通碳钢管', '2021-01-27 11:14:39', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '正常使用', '灌溉', '井灌', 0.00, 500000.00, 0, 0, '', 9999999999.00, 0, 9999999999.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('6481d4aa940a4f6eb76b59c4b703e627', '6103040420', '', 0.00, 0.00, '普通碳钢管', '2021-01-27 14:16:35', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '灌溉', '井灌', 0.00, 500000.00, 0, 0, '', 9999999999.00, 0, 9999999999.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('6582975256ca498f8306556b647d7d9d', '4825098444', '', 0.00, 0.00, '普通碳钢管', '2018-05-09 14:34:06', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '生活', '井灌', 0.00, 0.00, 0, 0, '', 0.00, 0, 0.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('6daf927b555c4af096daae4372b13333', '6103040309', '', 0.00, 0.00, '普通碳钢管', '2021-01-27 11:09:30', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '灌溉', '井灌', 0.00, 500000.00, 0, 0, '', 9999999999.00, 0, 9999999999.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('7739ece244874d359ef259ec09e0b662', '6103040414', '', 0.00, 0.00, '普通碳钢管', '2021-01-27 14:01:05', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '正常使用', '灌溉', '井灌', 0.00, 500000.00, 0, 0, '', 9999999999.00, 0, 9999999999.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
+INSERT INTO `basedeviceexpandinfo` VALUES ('785c9b198a8870dfd821b099270bfc59', '6103040101', '', 0.00, 0.00, '普通碳钢管', '2021-03-22 12:02:08', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '灌溉', '井灌', 0.00, 200.00, 0, 0, '', 0.00, 0, 0.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('79d3054356e2477682d851f12c62e36f', '7208666747', '', 0.00, 0.00, '普通碳钢管', '2018-05-09 15:25:53', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '生活', '井灌', 0.00, 0.00, 0, 0, '', 0.00, 0, 0.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('7afbfc17a2504d1fb1232e7215a8978b', '6103040204', '', 0.00, 0.00, '普通碳钢管', '2021-01-27 09:53:31', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '正常使用', '灌溉', '井灌', 0.00, 500000.00, 0, 0, '', 9999999999.00, 0, 9999999999.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
 INSERT INTO `basedeviceexpandinfo` VALUES ('7d1ccd28e3144c29a075220120f9adf7', '7208666756', '', 0.00, 0.00, '普通碳钢管', '2018-05-09 14:22:38', 0.00, 0.00, '地表水', '', 0.00, 0.00, 0.00, '停用', '生活', '井灌', 0.00, 0.00, 0, 0, '', 0.00, 0, 0.00, 0.00, 0.00, 0, '脉冲水表计量', '', 0.00, '', 0, '火山地貌', '', '井灌区', '');
@@ -1188,10 +1190,12 @@ INSERT INTO `basedeviceinfo` VALUES ('43ace20ef1504e6986f09a64e3f30bcb', 3, 1, '
 INSERT INTO `basedeviceinfo` VALUES ('43f864f6aef749baa8d14981d7bc0dd7', 4, 1, '6103040416', '610304112316', '61030401040', '', '宁王村16号井', 'TJ710', '13812345678     ', '中国移动', '陕西省宝鸡市陈仓区磻溪镇244国道', '2021-01-27 14:07:00', '', 107.3123240000, 34.2019790000, '[112.13.206.246:49333]', '', 0.00, '', '', '', '', '', 'TJ710-V13.1     ', 1, '2021-01-27 14:09:55', '2021-01-27 14:09:55');
 INSERT INTO `basedeviceinfo` VALUES ('45499291e6aa4404bbcd8f738751f38b', 4, 1, '6103040412', '610304112312', '61030401036', '', '宁王村12号井', 'TJ710', '13812345678     ', '中国移动', '陕西省宝鸡市陈仓区磻溪镇244国道', '2021-01-27 13:55:23', '', 107.3140340000, 34.2006420000, '[112.13.206.246:49245]', '', 0.00, '', '', '', '', '', 'TJ710-V13.1     ', 1, '2021-01-27 13:57:51', '2021-01-27 13:57:51');
 INSERT INTO `basedeviceinfo` VALUES ('49f833c3e28b4cf8832f65b7674857cf', 3, 1, '6103040304', '610304112204', '61030401013', '', '联合村4号井', 'TJ710', '13812345678     ', '中国移动', '陕西省宝鸡市陈仓区阳平镇联合积侠面皮', '2021-01-27 10:56:54', '', 107.5154010000, 34.3376950000, '[112.13.206.246:49249]', '', 0.00, '', '', '', '', '', 'TJ710-V13.1     ', 1, '2021-01-27 10:58:57', '2021-01-27 10:58:57');
+INSERT INTO `basedeviceinfo` VALUES ('4e28c1cd517ec49a45db423d10daadaf', 1, 1, '6103040101', '610304022001', '61030401001', '', '太公庙1号井', 'TJ710', '18393785857', '', '陕西省宝鸡市渭滨区马营镇冷沟', '2021-03-22 12:02:22', '', 107.2623880000, 34.2127750000, '', '', 0.00, '', '', '', 'f6a925c05723c9f7b649b8f88ea8e7b0.jpg', 'f41486e5cd0614ac6dd1dee529fd626f.png', '', 1, '2021-03-22 12:02:22', '2021-03-22 12:02:22');
 INSERT INTO `basedeviceinfo` VALUES ('5f4586ed621644249b9427607a8cfce2', 3, 1, '6103040311', '610304112211', '61030401020', '', '联合村11号井', 'TJ710', '13812345678     ', '中国移动', '陕西省宝鸡市陈仓区阳平镇西宝中线', '2021-01-27 11:14:39', '', 107.5082120000, 34.3362240000, '[112.13.206.246:49233]', '', 0.00, '', '', '', '', '', 'TJ710-V13.1     ', 1, '2021-01-27 11:16:30', '2021-01-27 11:16:30');
 INSERT INTO `basedeviceinfo` VALUES ('6481d4aa940a4f6eb76b59c4b703e627', 4, 1, '6103040420', '610304112320', '61030401044', '', '宁王村20号井', 'TJ710', '13812345678     ', '中国移动', '陕西省宝鸡市陈仓区磻溪镇244国道', '2021-01-27 14:16:35', '', 107.3138140000, 34.2007910000, '[112.13.206.246:35016]', '', 0.00, '', '', '', '', '', 'TJ710-V13.1     ', 1, '2021-01-27 14:18:33', '2021-01-27 14:18:33');
 INSERT INTO `basedeviceinfo` VALUES ('6daf927b555c4af096daae4372b13333', 3, 1, '6103040309', '610304112209', '61030401018', '', '联合村9号井', 'TJ710', '13812345678     ', '中国移动', '陕西省宝鸡市陈仓区阳平镇秦新加油站', '2021-01-27 11:09:30', '', 107.5075850000, 34.3339100000, '[112.13.206.246:49354]', '', 0.00, '', '', '', '', '', 'TJ710-V13.1     ', 1, '2021-01-27 11:11:53', '2021-01-27 11:11:53');
 INSERT INTO `basedeviceinfo` VALUES ('7739ece244874d359ef259ec09e0b662', 4, 1, '6103040414', '610304112314', '61030401038', '', '宁王村14号井', 'TJ710', '13812345678     ', '中国移动', '福建省厦门市思明区开元街道文园路厦门宾馆', '2021-01-27 14:01:05', '', 107.3154550000, 34.2018770000, '[112.13.206.246:49248]', '', 0.00, '', '', '', '', '', 'TJ710-V13.1     ', 1, '2021-01-27 14:04:41', '2021-01-27 14:04:41');
+INSERT INTO `basedeviceinfo` VALUES ('785c9b198a8870dfd821b099270bfc59', 1, 1, '6103040101', '610304022001', '61030401001', '', '太公庙1号井', 'TJ710', '18393785857', '', '陕西省宝鸡市渭滨区马营镇冷沟', '2021-03-22 12:02:08', '', 107.2623880000, 34.2127750000, '', '', 0.00, '', '', '', 'f6a925c05723c9f7b649b8f88ea8e7b0.jpg', 'f41486e5cd0614ac6dd1dee529fd626f.png', '', 1, '2021-03-22 12:02:08', '2021-03-22 12:02:08');
 INSERT INTO `basedeviceinfo` VALUES ('7afbfc17a2504d1fb1232e7215a8978b', 2, 1, '6103040204', '610304162704', '61030401007', '', '王家村4号井', 'TJ710', '18393785857', '中国移动', '陕西省宝鸡市渭滨区马营镇鸡峰山庙', '2021-01-27 09:53:31', '', 107.1925620000, 34.2408140000, '', '', 0.00, '', '', '', '', '', '', 1, '2021-01-27 09:57:25', '2021-01-27 09:57:25');
 INSERT INTO `basedeviceinfo` VALUES ('7f43358fc5b8400c95e8129eedff50d9', 3, 1, '6103040306', '610304112206', '61030401015', '', '联合村6号井', 'TJ710', '13812345678     ', '中国移动', '陕西省宝鸡市陈仓区阳平镇横阳路', '2021-01-27 11:02:19', '', 107.5084660000, 34.3389880000, '[112.13.206.246:49254]', '', 0.00, '', '', '', '', '', 'TJ710-V13.1     ', 1, '2021-01-27 11:05:01', '2021-01-27 11:05:01');
 INSERT INTO `basedeviceinfo` VALUES ('800392b3c39c444abdcb3ded102c1463', 4, 1, '6103040423', '610304112323', '61030401047', '', '宁王村23号井', 'TJ710', '13812345678     ', '中国移动', '陕西省宝鸡市陈仓区磻溪镇244国道', '2021-01-27 14:23:54', '', 107.3123020000, 34.2009170000, '[112.13.206.246:41528]', '', 0.00, '', '', '', '', '', 'TJ710-V13.1     ', 1, '2021-01-27 14:26:14', '2021-01-27 14:27:05');
@@ -10923,7 +10927,7 @@ CREATE TABLE `sysaccendantmodel`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '机井设备型号表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '机井设备型号表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysaccendantmodel
@@ -10960,7 +10964,7 @@ CREATE TABLE `sysapplystatus`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '应用状况表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '应用状况表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysapplystatus
@@ -11128,15 +11132,16 @@ CREATE TABLE `sysarea2`  (
   `createdAt` datetime(6) NULL DEFAULT NULL,
   `note` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysarea2
 -- ----------------------------
-INSERT INTO `sysarea2` VALUES (1, 20, '陕西省', '宝鸡市', '陈仓区', '东关街道', '太公庙村', '2021-03-09 14:44:26.000000', '2021-03-09 14:26:18.000000', '');
+INSERT INTO `sysarea2` VALUES (1, 20, '陕西省', '宝鸡市', '陈仓区', '东关街道', '太公庙村', '2021-03-22 14:42:52.000000', '2021-03-09 14:26:18.000000', '');
 INSERT INTO `sysarea2` VALUES (2, 27, '陕西省', '宝鸡市', '陈仓区', '周原镇', '王家村', NULL, '2021-03-09 14:45:28.000000', '');
 INSERT INTO `sysarea2` VALUES (3, 22, '陕西省', '宝鸡市', '陈仓区', '阳平镇', '联合村', NULL, '2021-03-09 14:46:31.000000', '');
 INSERT INTO `sysarea2` VALUES (4, 23, '陕西省', '宝鸡市', '陈仓区', '阳平镇', '宁王村', NULL, '2021-03-09 14:46:48.000000', '');
+INSERT INTO `sysarea2` VALUES (5, 0, '区域', '区域', '区域', '区域', '区域', '2021-03-23 10:32:29.000000', '2021-03-23 10:32:32.000000', '区域');
 
 -- ----------------------------
 -- Table structure for sysdevicemodel
@@ -11148,7 +11153,7 @@ CREATE TABLE `sysdevicemodel`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '机井设备型号表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '机井设备型号表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysdevicemodel
@@ -11178,7 +11183,7 @@ CREATE TABLE `sysirrigationareatype`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '灌区类型表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '灌区类型表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysirrigationareatype
@@ -11197,7 +11202,7 @@ CREATE TABLE `sysirrigationmode`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '灌溉模式表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '灌溉模式表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysirrigationmode
@@ -11219,7 +11224,7 @@ CREATE TABLE `syslandformtype`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '地貌类型表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '地貌类型表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of syslandformtype
@@ -11255,7 +11260,7 @@ CREATE TABLE `sysmeasuretype`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '计量设施类型表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '计量设施类型表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysmeasuretype
@@ -11354,6 +11359,7 @@ INSERT INTO `sysmenu` VALUES ('74', '74', '三相电压', 3, '19', 'paraSettings
 INSERT INTO `sysmenu` VALUES ('75', '75', '功率设置', 3, '19', 'paraSettingsHome/PowerSetting', '', 75, '2021-03-19 11:38:05', NULL, '');
 INSERT INTO `sysmenu` VALUES ('76', '76', '异常参数设置', 3, '19', 'paraSettingsHome/ExceptParams', '', 76, '2021-03-19 11:38:05', NULL, '');
 INSERT INTO `sysmenu` VALUES ('77', '77', '维修人员', 3, '25', 'basicInfoHome/MaintenanceStaff', '', 77, '2021-03-19 11:38:05', NULL, '');
+INSERT INTO `sysmenu` VALUES ('78', '78', '菜单管理', 2, '4', 'sys/menuManagement', '', 78, '2021-03-24 10:47:42', NULL, '');
 INSERT INTO `sysmenu` VALUES ('8', '8', '收费管理', 1, '', 'baseChargeManage/index.do', 'charge', 3, '2016-11-20 19:43:17', NULL, '');
 INSERT INTO `sysmenu` VALUES ('9', '9', '充值统计', 2, '2', 'statistic/money.do', '', 9, '2016-08-20 11:58:16', NULL, '');
 
@@ -11362,7 +11368,7 @@ INSERT INTO `sysmenu` VALUES ('9', '9', '充值统计', 2, '2', 'statistic/money
 -- ----------------------------
 DROP TABLE IF EXISTS `sysoperator`;
 CREATE TABLE `sysoperator`  (
-  `Id` int(11) NOT NULL  AUTO_INCREMENT COMMENT '标识，guid',
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `Operator` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '运营商（如移动、联通、电信等）',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
@@ -11397,7 +11403,7 @@ CREATE TABLE `syspumpmaterial`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '泵管材质表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '泵管材质表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of syspumpmaterial
@@ -11425,8 +11431,8 @@ CREATE TABLE `sysrole`  (
 -- ----------------------------
 -- Records of sysrole
 -- ----------------------------
-INSERT INTO `sysrole` VALUES ('32099d718bc5fda1bd7a9fc02fc1b884', 3, '水利局管理员', '1', '2021-03-06 11:13:52', NULL, '水利局管理', '1,31,6,7,32,33,36,38,48,52,53,26,27,28,29,3,24,45,46,47,4,13,14,16,17,19,25,30,8,40,41,42,2,49,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77');
-INSERT INTO `sysrole` VALUES ('d19f652acb4f4812b13b9b7c9a899d52', 1, '系统管理员', '', '2016-08-22 21:54:35', '2017-06-01 16:33:32', '超级管理员', '77,49,48,1,31,6,7,2,32,33,36,37,38,52,53,26,27,28,29,3,24,45,46,47,4,13,14,16,17,19,25,30,8,40,41,42,,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76');
+INSERT INTO `sysrole` VALUES ('32099d718bc5fda1bd7a9fc02fc1b884', 3, '水利局管理员', '1', '2021-03-06 11:13:52', NULL, '水利局管理', '1,31,6,7,2,32,33,36,38,48,52,53,27,3,24,45,46,47,13,14,19,71,72,73,74,75,76,25,60,61,63,64,65,66,67,68,69,70,77,8,40,41,42,26,4');
+INSERT INTO `sysrole` VALUES ('907bdda6a98677e0fa8ec436f45ae8ac', 1, '超级管理员', '', '2021-03-06 11:13:51', NULL, '超级管理员', '1,31,6,7,2,32,33,36,38,48,52,53,26,27,28,29,3,24,45,46,47,4,13,14,16,17,19,71,72,73,74,75,76,25,60,61,63,64,65,66,67,68,69,70,77,30,8,40,41,42,78');
 
 -- ----------------------------
 -- Table structure for sysshortmsg
@@ -11466,23 +11472,23 @@ CREATE TABLE `sysuser`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '上次修改时间',
   `UserPasswordming` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '明文密码',
-  `Authority` int(2) NOT NULL DEFAULT 0 COMMENT '售水权限 0. 无售水权限 1. 有售水权限',
-  `IsActive` int(2) NULL DEFAULT NULL COMMENT '是否激活',
-  `IsAppUser` int(2) NOT NULL DEFAULT 0 COMMENT '是否APP注册用户 0. 非APP注册  1. APP注册',
+  `Authority` int(2) NULL DEFAULT 0 COMMENT '售水权限 0. 无售水权限 1. 有售水权限',
+  `IsActive` int(2) NOT NULL COMMENT '是否激活',
+  `IsAppUser` int(2) NULL DEFAULT 0 COMMENT '是否APP注册用户 0. 非APP注册  1. APP注册',
   `MobileID` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'APP注册时所使用的手机标识ID',
   `AuditFlag` int(2) NULL DEFAULT 0 COMMENT '审核标志 0. 未审核  1. 审核通过  2. 审核不通过',
   `Remark` varchar(256) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   `Token` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'token',
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `role`(`RoleCode`) USING BTREE,
-  CONSTRAINT `role` FOREIGN KEY (`RoleCode`) REFERENCES `sysrole` (`RoleCode`) ON DELETE RESTRICT ON UPDATE CASCADE
+  CONSTRAINT `role` FOREIGN KEY (`RoleCode`) REFERENCES `sysrole` (`RoleCode`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysuser
 -- ----------------------------
-INSERT INTO `sysuser` VALUES ('051826f548ff440ebfa68def08ea8c10', 'e2ce28b64f344408a36c4857ddf741ec', '40c695c43a6848c78e4f834beb76e2ed', 'dongyuan', 'dongyuan', '38b5897b6f905728e4056e1fcfe0d698', '1', 3, '东远测试', '13812345678', '', '', '2020-12-18 16:41:35', '2020-12-18 16:41:35', 'dongyuan123', 0, 1, 0, NULL, 1, '', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvbmd5dWFuIiwiaWF0IjoxNjE2MTQ3Mjk5LCJleHAiOjE2MTYyMzM2OTl9.p_qm1IKAmxpoyKtIPEZJ01neh7ikqXgpD_PZc6qUKAM');
-INSERT INTO `sysuser` VALUES ('c0aedd4cded74fad8963226c83cbc965', '100c690948969d1316b377bdf0e73068', '200c690948969d1316b377bdf0e73068', '1', 'admin', 'dca9055249c3cdb09e457e4d33afdd35', '', 1, 'admin', '18219864776', '1454635698@qq.com', '', '2016-08-22 21:53:01', '2018-11-14 14:26:17', 'jixunwulian', 1, 1, 0, NULL, 1, '系统超级管理员', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjE2MTQ2NjIyLCJleHAiOjE2MTYyMzMwMjJ9.LlaUF69av2tOxVBZAQ6jAQmUNYJGmKweKXF6hDGTMYs');
+INSERT INTO `sysuser` VALUES ('051826f548ff440ebfa68def08ea8c10', 'e2ce28b64f344408a36c4857ddf741ec', '40c695c43a6848c78e4f834beb76e2ed', '2', 'dongyuan', '38b5897b6f905728e4056e1fcfe0d698', '1', 3, '东远测试', '13812345678', '', '', '2020-12-18 16:41:35', '2020-12-18 16:41:35', 'dongyuan123', 0, 1, 0, NULL, 1, '', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvbmd5dWFuIiwiaWF0IjoxNjE2NTU0MTgxLCJleHAiOjE2MTY2NDA1ODF9.WFhY162YdhBZxTSD1d4ulonl24Gte-FIZN7_3RP-i8M');
+INSERT INTO `sysuser` VALUES ('4f55ef95b22221a523744db7cc702c1e', '5', '1', '1', 'admin', 'a66abb5684c45962d887564f08346e8d', '1', 1, '超级管理员', '18888888888', 'abc@admin.com', '宝鸡', '2020-03-23 17:03:29', NULL, 'admin123456', 1, 1, 1, NULL, 0, '超级管理员', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjE2NjYzMDM3LCJleHAiOjE2MTY3NDk0Mzd9.k-VjzH9nnqIabSFHFwdcmoE5V8ATWZkWxWDEajBlNow');
 
 -- ----------------------------
 -- Table structure for sysuserwater
@@ -11516,7 +11522,7 @@ CREATE TABLE `sysusewatertype`  (
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '取水类型表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '取水类型表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sysusewatertype
@@ -11604,12 +11610,12 @@ INSERT INTO `syswaterarea2` VALUES (1, 610304, '陕西省', '宝鸡市', '陈仓
 -- ----------------------------
 DROP TABLE IF EXISTS `syswelluse`;
 CREATE TABLE `syswelluse`  (
-  `Id` tinyint(4) NOT NULL  AUTO_INCREMENT COMMENT '标识，guid',
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '标识，guid',
   `WellUse` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '水井用途',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `EditTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '水井用途表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '水井用途表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of syswelluse

@@ -1,8 +1,15 @@
 const express = require('express')
+const app = express()
+
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT)
+
+
 const path = require('path')
 const bodyParser = require('body-parser')
 const jwt = require('./utils/jwt')
-const app = express()
+
 
 
 app.use(bodyParser.json())
@@ -40,7 +47,6 @@ app.all('/*', (request, res, next) => {
 })
 
 
-
 require('./routes/authRoutes')(app)
 require('./routes/menuRoutes')(app)
 require('./routes/settingsRoutes')(app)
@@ -50,8 +56,5 @@ require('./routes/chargeRoutes')(app)
 require('./routes/chartRoutes')(app)
 require('./routes/alarmRoutes')(app)
 
-const PORT = process.env.PORT || 5000
-
-app.listen(PORT)
 
 require('./ws')
